@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>syllabus</class>
+ <widget class="QDialog" name="syllabus">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>493</width>
+    <height>483</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #6adfb0;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">border:0;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="styleSheet">
+         <string notr="true">border:0;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">color: #3d3397; font:bold 40px &quot;Sherif&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Syllabus</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Introduction to Object Oriented Programming</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_2">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Introducing C++ </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_3">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Classes and Objects</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_5">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Object Constructions and Destructions</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_6">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Operator Overloading</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_7">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Inheritance</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_4">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Polymorphism</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_8">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Template</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_9">
+           <property name="styleSheet">
+            <string notr="true">color: #3d3397; font:bold 20px &quot;Sherif&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Exception Handling</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: #dfb06a;
+color:#3d3397;
+font: bold 20px,  &quot;Sherif&quot; ; 
+border-width: 5px;
+border-radius: 15px; padding:6;</string>
+           </property>
+           <property name="text">
+            <string>Done</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="styleSheet">
+            <string notr="true">background-color: #dfb06a;
+color:#3d3397;
+font: bold 20px,  &quot;Sherif&quot; ; 
+border-width: 5px;
+border-radius: 15px; padding:6;</string>
+           </property>
+           <property name="text">
+            <string>Cancel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

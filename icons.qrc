@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>icon/calender.jpg</file>
+        <file>icon/home.png</file>
+        <file>icon/maintenance.png</file>
+        <file>icon/music.jpg</file>
+        <file>icon/notes.jpg</file>
+        <file>icon/pomodoro.jpg</file>
+        <file>icon/profile.jpg</file>
+        <file>icon/schedule.jpg</file>
+        <file>icon/1.png</file>
+        <file>icon/logout.png</file>
+        <file>icon/MITRA.png</file>
+        <file>icon/Backgroundlogin.jpg</file>
+        <file>icon/arrow-left-solid.png</file>
+        <file>icon/add-file.png</file>
+        <file>icon/copy.png</file>
+        <file>icon/cut.png</file>
+        <file>icon/diskette.png</file>
+        <file>icon/documents.png</file>
+        <file>icon/folder (1).png</file>
+        <file>icon/folder.png</file>
+        <file>icon/paste.png</file>
+        <file>icon/redo.png</file>
+        <file>icon/arrow.png</file>
+        <file>icon/info.png</file>
+        <file>icon/backward.png</file>
+        <file>icon/forward.png</file>
+        <file>icon/Play.png</file>
+        <file>icon/logo.png</file>
+        <file>icon/user_icon.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/database">
+        <file>heyy.db</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
