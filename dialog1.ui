@@ -22,47 +22,6 @@
   <property name="styleSheet">
    <string notr="true">background-color:  #58b48f;</string>
   </property>
-  <widget class="QPushButton" name="Profile">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>100</y>
-     <width>101</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 50px;
-    border-style: outset;
-   background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 rgb(255, 214, 249) stop: 1 rgb(255, 237, 237)
-        );
-   
-    padding: 5px;
-    }
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -85,7 +44,7 @@ QPushButton:pressed {
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="display_name">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -105,7 +64,7 @@ QPushButton:pressed {
 background:0;</string>
    </property>
    <property name="text">
-    <string>Bibhushan</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="Home">
@@ -373,150 +332,31 @@ font: bold &quot;Sherif&quot;;</string>
     <string>Logout</string>
    </property>
   </widget>
-  <widget class="QFrame" name="frame">
+  <widget class="QLabel" name="profile">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>559</y>
-     <width>891</width>
-     <height>141</height>
+     <x>30</x>
+     <y>90</y>
+     <width>63</width>
+     <height>20</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius:0;</string>
+   <property name="text">
+    <string/>
    </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
+  </widget>
+  <widget class="QPushButton" name="change">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>300</y>
+     <width>31</width>
+     <height>29</height>
+    </rect>
    </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
+   <property name="text">
+    <string/>
    </property>
-   <widget class="QPushButton" name="Pomodoro_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>20</y>
-      <width>31</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-image: url(:/icon/icon/Play.png);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pomodoro_3">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>30</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-image: url(:/icon/icon/forward.png);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pomodoro_4">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>30</y>
-      <width>31</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-
-image: url(:/icon/icon/backward.png);
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>99</x>
-      <y>89</y>
-      <width>751</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>100</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #3d3397; font: 17px &quot;Sherif&quot;</string>
-    </property>
-    <property name="text">
-     <string>01:24</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>10</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>24</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:#3d3397;
-background:0;</string>
-    </property>
-    <property name="text">
-     <string>MoonNight Sonata</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>50</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #3d3397; font: 17px &quot;Sherif&quot;</string>
-    </property>
-    <property name="text">
-     <string>Study Music</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>

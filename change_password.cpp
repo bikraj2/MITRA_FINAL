@@ -10,7 +10,6 @@ change_password::change_password(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->mesage->setText("");
-
     //QIcon * qApp = new QIcon(this);
     //qApp->setWindowIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
 }

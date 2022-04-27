@@ -143,14 +143,7 @@ void todo::load_not_started()
                    QString delete_qry="Delete from not_started where taskname='"+task+"' and username = '"+username+"'";
                    QSqlQuery insert;
                    QString insert_qry="INSERT INTO on_going (taskname,username) values ('"+task+"','"+username+"')";
-                   if(delete_.exec(delete_qry))
-                   {
-                       qDebug()<<"Deleted my g";
-                   }
-                   else
-                   {
-                       qDebug()<<"NOt delered"+delete_.lastError().text();
-                   }
+                   delete_.exec(delete_qry);
 
                    if(insert.exec(insert_qry))
                    {

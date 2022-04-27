@@ -96,9 +96,14 @@ bool MainWindow :: setTable()
                 "nickname varchar(50) PRIMARY KEY,"
                 "username varchar(50),"
                 "password1 varchar(50),"
-                "DOB date"
+                "DOB date,"
+                "Profile_picture varchar(50) DEFAULT '0.png' "
             ");";
-    table1.exec(qry);
+    if(table1.exec(qry))
+{qDebug()<<"Done";}
+    else
+    {
+    qDebug()<<table1.lastError().text();}
         QString not_started_qry="Create Table not_started (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",on_going_qry="Create Table on_going (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",completed_qry="Create Table completed (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))";
         if(not_started.exec(not_started_qry))
         {
