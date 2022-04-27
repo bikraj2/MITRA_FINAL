@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>789</height>
+    <height>909</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -36,23 +36,6 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="user_icon">
-        <property name="styleSheet">
-         <string notr="true">image: url(:/icon/icon/user_icon.png);min-width:200px;</string>
-        </property>
-        <property name="text">
-         <string>
-
-
-
-
-
-
-                Profile Picture</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QFrame" name="user_details">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -68,6 +51,23 @@
            </property>
            <property name="text">
             <string>Bibhushan Saakha</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="user_icon">
+           <property name="styleSheet">
+            <string notr="true">image: url(:/icon/icon/user_icon.png);min-width:200px;</string>
+           </property>
+           <property name="text">
+            <string>
+
+
+
+
+
+
+                Profile Picture</string>
            </property>
           </widget>
          </item>
