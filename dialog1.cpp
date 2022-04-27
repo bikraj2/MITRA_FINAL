@@ -55,7 +55,6 @@ void Dialog1::on_pushButton_clicked()
 }
 
 
-<<<<<<< HEAD
 void Dialog1::on_logout_clicked()
 {
     this->hide();
@@ -63,7 +62,6 @@ void Dialog1::on_logout_clicked()
     parent->show();
 }
 
-=======
 void Dialog1::on_change_clicked()
 {
     QString names[] ={"0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png"};
@@ -85,4 +83,3 @@ void Dialog1::on_change_clicked()
 
 
 }
->>>>>>> 7262b4c4e573e0b99cf543c8f3c33d6bedba64cf
