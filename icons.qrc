@@ -29,6 +29,7 @@
         <file>icon/Play.png</file>
         <file>icon/logo.png</file>
         <file>icon/user_icon.png</file>
+        <file>icon/phooo.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/database">

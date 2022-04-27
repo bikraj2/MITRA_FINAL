@@ -28,14 +28,6 @@ void Dialog1::on_pushButton_3_clicked()
 }
 
 
-void Dialog1::on_logouticon_clicked()
-{
-    this->hide();
-    QWidget *parent = this->parentWidget();
-    parent->show();
-}
-
-
 void Dialog1::on_pushButton_2_clicked()
 {
     hide();
@@ -49,5 +41,13 @@ void Dialog1::on_pushButton_clicked()
     player = new music(this);
     hide();
     player->show();
+}
+
+
+void Dialog1::on_logout_clicked()
+{
+    this->hide();
+    QWidget *parent = this->parentWidget();
+    parent->show();
 }
 
