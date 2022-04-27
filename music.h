@@ -13,6 +13,7 @@
 #include<QMessageBox>
 #include<QTimer>
 #include<QFont>
+#include<QElapsedTimer>
 
 QT_BEGIN_NAMESPACE
 class QMediaPlayer;
@@ -88,6 +89,8 @@ private slots:
      void stop();
     void reset();
 
+    void on_pushButton3_clicked();
+
 private:
 
     static int count;
@@ -105,6 +108,7 @@ private:
     //QMediaPlaylist *playlist = nullptr;
 
     QTimer * timer1;
+    //QElapsedTimer *timer2;
 
 
 };

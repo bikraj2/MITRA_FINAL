@@ -4,17 +4,25 @@
 #include<QMouseEvent>
 #include<QPushButton>
 #include<QAction>
+#include<QPixmap>
+#include<QSystemTrayIcon>
+
 music::music(QWidget *parent) :
    QDialog(parent),
     ui(new Ui::music)
 {
     ui->setupUi(this);
+
     this->setWindowTitle("Music");
+
+    QPixmap pix("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
+    ui->label2->setPixmap(pix.scaled(500,500, Qt::KeepAspectRatio));
 
 
     player = new QMediaPlayer(this);
     audio = new QAudioOutput(this);
     timer1 = new QTimer(this);
+
     connect(timer1,SIGNAL(timeout()),this,SLOT(changeTime()));
     player->setAudioOutput(audio);
 
@@ -206,6 +214,7 @@ void music::on_startButton_clicked() // for music
 
 
 
+       timer1->start(10);
 
         player->play();
         qDebug()<<"hello";
@@ -216,6 +225,7 @@ void music::on_startButton_clicked() // for music
 void music::on_stopButton_clicked() // for music
 {
     player->stop();
+    timer1->stop() ;
 
 
 }
@@ -288,9 +298,9 @@ void music::on_Pomodoro_backButton_clicked()
 
 
 void music::start(){
-    timer1->start(10);
-    ui->pushButton1->setText("Stop");
-    connect(ui->pushButton1,SIGNAL(clicked()),this,SLOT(stop()));
+   // timer1->start(10);
+
+
 
 
 }
@@ -324,6 +334,35 @@ int music:: count=0;
 void music:: changeTime(){
 
         millisecond++;
+        if(minute==1 && second ==0)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("Great Work, Champ!");
+            msgBox.setText("Do you want a break now? ");
+            msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
+            int ret = msgBox.exec();
+
+            switch (ret) {
+              case QMessageBox::Yes:
+                millisecond = minute = second = 0 ;
+
+
+
+                  // Save was clicked
+                msgBox.close();
+                break;
+              case QMessageBox::No:
+                second = 1;
+                player->play();
+
+                msgBox.close();
+
+                break;
+
+
+            }
+
+        }
         if(millisecond>=100){
             millisecond=0;
             second++;
@@ -335,7 +374,16 @@ void music:: changeTime(){
             minute++;
         }
 
+
         ui->label1->setText(intToQString(minute)+":"+intToQString(second));
+
+
+        if(player->QMediaPlayer::StoppedState)
+        {
+            player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
+            player->play();
+            qDebug()<<"HEllo";
+        }
     }
 
 QString music:: intToQString(int num){
@@ -349,9 +397,11 @@ QString music:: intToQString(int num){
 }
 
 void music::on_pushButton1_clicked()
+
 {   timer1->start(10);
-    ui->pushButton1->setText("Stop");
-    connect(ui->pushButton1,SIGNAL(clicked()),this,SLOT(start()));
+
+
+  //  connect(ui->pushButton1,SIGNAL(clicked()),this,SLOT(start()));
 //    if(assert(ui->pushButton1->text()=="Start")){
 //        qDebug()<<"hello";
 
@@ -364,7 +414,18 @@ void music::on_pushButton2_clicked()
     millisecond = second = minute = 0;
     ui->label1->setText(intToQString(minute)+":"+intToQString(second));
     timer1->stop();
+    player->stop();
 
 }
 
+
+
+void music::on_pushButton3_clicked()
+{
+    player->stop();
+    timer1->stop();
+   // sysIcon = new QSystemTrayIcon(this);
+   // sysIcon->setIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
+
+}
 

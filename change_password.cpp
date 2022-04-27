@@ -2,14 +2,18 @@
 #include "ui_change_password.h"
 #include<QtSql>
 #include<QMessageBox>
+#include<QSystemTrayIcon>
+#include<QIcon>
 change_password::change_password(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::change_password)
 {
     ui->setupUi(this);
     ui->mesage->setText("");
-}
 
+    //QIcon * qApp = new QIcon(this);
+    //qApp->setWindowIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
+}
 change_password::~change_password()
 {
     delete ui;
