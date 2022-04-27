@@ -21,7 +21,7 @@ public:
 private slots:
 
 
-    void on_Profile_clicked();
+
 
     void on_pushButton_3_clicked();
 
@@ -31,7 +31,11 @@ private slots:
 
     void on_pushButton_clicked();
 
+<<<<<<< HEAD
     void on_logout_clicked();
+=======
+    void on_change_clicked();
+>>>>>>> 7262b4c4e573e0b99cf543c8f3c33d6bedba64cf
 
 private:
     Ui::Dialog1 *ui;
