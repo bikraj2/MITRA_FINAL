@@ -63,12 +63,13 @@ music::music(QWidget *parent) :
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-
+    QAction *sc1 = new QAction(this);
+    sc1->setShortcut(Qt::Key_Enter);
    // connect(sc, SIGNAL(triggered()), this, SLOT(start()));
     connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
-
+    connect(sc1, SIGNAL(triggered()), this, SLOT(on_stopButton_clicked()));
     this->addAction(sc);
-
+    this->addAction(sc1);
 };
 music::~music()
 {
@@ -188,30 +189,28 @@ void music:: changeTime(){
         msgBox.setText("Great Work, Champ!");
         msgBox.setText("Do you want a break now? ");
         msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
-        if(minute==0 && second ==10)
+        if(minute==25 && second ==0)
         {
 
             option = msgBox.exec();
-
-            if(option== QMessageBox::Yes){
-
+            switch(option)
+            {
+                case QMessageBox::Yes:
                 msgBox.close();
                 minute = second =  millisecond = 0 ;
                 ui->label1->setText(intToQString(minute)+":"+intToQString(second));
                 timer1->stop();
                 bsecond = 59; bminute = 4;
                 breaktime();
-            }
-            else if(option== QMessageBox:: No){
+                break ;
+
+                case QMessageBox::No :
                 msgBox.close();
-                player->play();
+                second++;
 
 
-
-             }
-
-
-
+                break;
+         }
 
         }
         if(millisecond>=100){
@@ -264,7 +263,7 @@ void music:: breaktime(){
     }
      ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
 
-    if(bsecond == 50 && bminute == 4){
+    if(bsecond == 0 && bminute == 0){
         timer2->stop();
         bsecond=bminute== 0 ;
         ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
@@ -278,10 +277,6 @@ void music:: breaktime(){
         //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
 
     //timer2->start(10);
-
-
-
-
 
 
 
