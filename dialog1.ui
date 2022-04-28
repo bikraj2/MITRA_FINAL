@@ -108,85 +108,6 @@ background:0;</string>
     <string>Bibhushan</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Home">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>340</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:#6adfb0; border-radius:10; color:#3d3397;</string>
-   </property>
-   <property name="text">
-    <string>Home</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="homeicon">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>340</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/icon/icon/home.png);
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="settingsicon">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>410</y>
-     <width>41</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/icon/icon/maintenance.png);
-
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="settings">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>420</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:#6adfb0; border-radius:10; color:#3d3397;</string>
-   </property>
-   <property name="text">
-    <string>Settings</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Pomodoro">
    <property name="geometry">
     <rect>
@@ -246,10 +167,10 @@ background-color:#6adfb0;
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>320</y>
-     <width>721</width>
-     <height>211</height>
+     <x>230</x>
+     <y>370</y>
+     <width>821</width>
+     <height>291</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -311,38 +232,11 @@ background:#367a5f; border:0; border-radius:10; font: 20 bold &quot;Sherif&quot;
     <string>Study Progress</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>360</y>
-     <width>311</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:rgb(4, 4, 4);
-font: 14pt &quot;Monaco&quot;;
-background-color:#6adfb0;</string>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Monaco'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:18pt; font-style:italic;&quot;&gt;1. Complete Assignments&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:18pt; font-style:italic;&quot;&gt;2. Prepare for Internals&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:18pt; font-style:italic;&quot;&gt;3. Homecode for Mitra Application&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:18pt; font-style:italic;&quot;&gt;4. Keep yourself hydrated&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:18pt; font-style:italic;&quot;&gt;5. Excercise&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Bodoni 72 Smallcaps'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="logouticon">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>487</y>
+     <x>30</x>
+     <y>410</y>
      <width>41</width>
      <height>31</height>
     </rect>
@@ -360,7 +254,7 @@ background-color:rgb(227, 226, 223);
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>490</y>
+     <y>410</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -372,151 +266,6 @@ font: bold &quot;Sherif&quot;;</string>
    <property name="text">
     <string>Logout</string>
    </property>
-  </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>559</y>
-     <width>891</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius:0;</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="Pomodoro_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>20</y>
-      <width>31</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-image: url(:/icon/icon/Play.png);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pomodoro_3">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>30</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-image: url(:/icon/icon/forward.png);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Pomodoro_4">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>30</y>
-      <width>31</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:  #58b48f;
-
-image: url(:/icon/icon/backward.png);
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>99</x>
-      <y>89</y>
-      <width>751</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>100</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #3d3397; font: 17px &quot;Sherif&quot;</string>
-    </property>
-    <property name="text">
-     <string>01:24</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>10</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>24</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:#3d3397;
-background:0;</string>
-    </property>
-    <property name="text">
-     <string>MoonNight Sonata</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>50</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #3d3397; font: 17px &quot;Sherif&quot;</string>
-    </property>
-    <property name="text">
-     <string>Study Music</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>

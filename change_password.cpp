@@ -13,6 +13,10 @@ change_password::change_password(QWidget *parent) :
 
     //QIcon * qApp = new QIcon(this);
     //qApp->setWindowIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
+     backbutton = new QPushButton("",this);
+       backbutton->setGeometry(QRect(QPoint(100, 100), QSize(200, 50)));
+       backbutton->setIcon(QIcon(":/icon/icon/arrow-left-solid.png"));
+backbutton->setStyleSheet("color:red");
 }
 change_password::~change_password()
 {
@@ -89,4 +93,7 @@ void change_password :: encrypt(QString &string_encrypt)
         }
     }
 }
+
+
+
 

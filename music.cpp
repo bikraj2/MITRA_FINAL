@@ -16,7 +16,6 @@ music::music(QWidget *parent) :
     this->setWindowTitle("Music");
 
     QPixmap pix("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
-    ui->label2->setPixmap(pix.scaled(500,500, Qt::KeepAspectRatio));
 
 
     player = new QMediaPlayer(this);

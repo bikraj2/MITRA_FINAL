@@ -6,6 +6,8 @@
 #include<QFileInfo>
 #include<QtDebug>
 #include<iostream>
+#include<QAction>
+#include<QKeyEvent>
 QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
 QString username;
 MainWindow::MainWindow(QWidget *parent)
@@ -70,10 +72,10 @@ void MainWindow:: db_conn_open()
     QDir data("C:/Db");
         if (!data.exists())
         {
-            data.mkpath("C:/Db");
+            data.mkpath("C:/D");
         }
         QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-        info.setDatabaseName("C:/Db/users.db");
+        info.setDatabaseName("/Users/priyanshu/ProjectMitra/Mitra_Final/users.db");
         info.open();
         if(!info.open())
         {
@@ -155,10 +157,20 @@ void MainWindow::encrypt(QString &string_encrypt){
     }
 }
 
+
 void MainWindow::on_pushButton_clicked()
 {
     hide();
     password1=new ForgotPassword(this);
     password1->show();
 }
+void MainWindow::keyPressEvent(QKeyEvent * e)
+{
+    if (e->key()== Qt::Key_Enter)
+    {
+
+       }
+
+}
+
 
