@@ -37,6 +37,8 @@ public:
 
     float volume();
     int millisecond,  minute , second =0;
+    int bmillisecond, bminute, bsecond = 0  ;
+
 public slots:
 
 

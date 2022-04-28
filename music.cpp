@@ -16,7 +16,7 @@ music::music(QWidget *parent) :
     this->setWindowTitle("Music");
 
     QPixmap pix(":/icon/icon/phooo.png");
-    ui->label2->setPixmap(pix.scaled(500,500, Qt::KeepAspectRatio));
+    ui->label2->setPixmap(pix.scaled(400,400, Qt::KeepAspectRatio));
 
 
     player = new QMediaPlayer(this);
@@ -25,6 +25,7 @@ music::music(QWidget *parent) :
     timer2 = new QTimer(this);
 
     connect(timer1,SIGNAL(timeout()),this,SLOT(changeTime()));
+     //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
     connect(timer2,SIGNAL(timeout()),this,SLOT(breaktime()));
 
 
@@ -101,7 +102,7 @@ if(count<0)
 player->play();
 }
 void music :: on_previousButton_clicked(){
-    qDebug()<<"as";
+
     count=count%6;
     count--;
    if(count  ==1){
@@ -187,7 +188,7 @@ void music:: changeTime(){
         msgBox.setText("Great Work, Champ!");
         msgBox.setText("Do you want a break now? ");
         msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
-        if(minute==25 && second ==0)
+        if(minute==0 && second ==10)
         {
 
             option = msgBox.exec();
@@ -195,12 +196,16 @@ void music:: changeTime(){
             if(option== QMessageBox::Yes){
 
                 msgBox.close();
+                minute = second =  millisecond = 0 ;
+                ui->label1->setText(intToQString(minute)+":"+intToQString(second));
+                timer1->stop();
+                bsecond = 59; bminute = 4;
                 breaktime();
             }
             else if(option== QMessageBox:: No){
                 msgBox.close();
                 player->play();
-                breaktime();
+
 
 
              }
@@ -241,31 +246,54 @@ void music:: alert(){
     }
 }
 void music:: breaktime(){
-    do{
+
+    QMessageBox breakfinish;
+    breakfinish.setText("Break Finished");
+    breakfinish.setStandardButtons(QMessageBox::Ok);
 
 
-    minute = 4;
-    second = 59;
-
-    connect(timer2,SIGNAL(timeout()),this,SLOT(breaktime()));
     timer2->start(10);
-
-
-    if(second<=0){
-        minute--;
-        second = 59;
+    bmillisecond++;
+    if(bmillisecond>=100){
+        bmillisecond = 0 ;
+        bsecond--;
     }
+    if(bsecond<=0){
+        bsecond = 59;
+        bminute--;
+    }
+     ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
+
+    if(bsecond == 50 && bminute == 4){
+        timer2->stop();
+        bsecond=bminute== 0 ;
+        ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
 
 
 
-    ui->label1->setText(intToQString(minute)+":"+intToQString(second));
-   }
-    while(second==0 && minute ==0);
+        breakfinish.exec();
+        timer1->start(10);
+        changeTime();
 
+        //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
+
+    //timer2->start(10);
+
+
+
+
+
+
+
+
+
+
+}
 }
 void music::on_pushButton1_clicked()
 
-{   timer1->start(10);
+{
+    timer1->start(10);
 
 }
 void music::on_pushButton2_clicked()
