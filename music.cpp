@@ -63,13 +63,13 @@ music::music(QWidget *parent) :
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-    QAction *sc1 = new QAction(this);
-    sc1->setShortcut(Qt::Key_Enter);
+   // QAction *sc1 = new QAction(this);
+   // sc1->setShortcut(Qt::Key_Enter);
    // connect(sc, SIGNAL(triggered()), this, SLOT(start()));
     connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
-    connect(sc1, SIGNAL(triggered()), this, SLOT(on_stopButton_clicked()));
+   // connect(sc1, SIGNAL(triggered()), this, SLOT(on_stopButton_clicked()));
     this->addAction(sc);
-    this->addAction(sc1);
+    //this->addAction(sc1);
 };
 music::~music()
 {
@@ -170,9 +170,12 @@ void music::on_stopButton_clicked() {
 }
 void music::on_Pomodoro_backButton_clicked()
 {
+    timer1->stop();
+    player->stop();
     this->hide();
     QWidget * parent  = this->parentWidget();
     parent->show();
+
 }
 
 int music:: count=0;
