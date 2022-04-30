@@ -15,18 +15,22 @@ music::music(QWidget *parent) :
 
     this->setWindowTitle("Music");
 
-    QPixmap pix("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
-    ui->label2->setPixmap(pix.scaled(500,500, Qt::KeepAspectRatio));
+    QPixmap pix(":/icon/icon/phooo.png");
+    ui->label2->setPixmap(pix.scaled(400,400, Qt::KeepAspectRatio));
 
 
     player = new QMediaPlayer(this);
     audio = new QAudioOutput(this);
     timer1 = new QTimer(this);
+    timer2 = new QTimer(this);
 
     connect(timer1,SIGNAL(timeout()),this,SLOT(changeTime()));
+     //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
+    connect(timer2,SIGNAL(timeout()),this,SLOT(breaktime()));
+
+
     player->setAudioOutput(audio);
 
-    //playButton = new QToolButton(this);
     ui->playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
     QFont font = ui->label1->font();
     font.setBold(true);
@@ -37,20 +41,20 @@ music::music(QWidget *parent) :
 
     connect(ui->playButton, &QAbstractButton::clicked, this, &music::on_startButton_clicked);
 
-    //stopButton = new QToolButton(this);
+
     ui->stopButton->setIcon(style()->standardIcon(QStyle::SP_MediaStop));
 
 
     connect(ui->stopButton, &QAbstractButton::clicked, this, &music::on_stopButton_clicked);
 
-    //extButton = new QToolButton(this);
+
     ui->nextButton->setIcon(style()->standardIcon(QStyle::SP_MediaSkipForward));
 
     connect(ui->nextButton, &QAbstractButton::clicked, this, &music::on_nextButton_clicked);
 
-    //previousButton = new QToolButton(this);
+
     ui->previousButton->setIcon(style()->standardIcon(QStyle::SP_MediaSkipBackward));
-    //previousButton ->setIcon(style()->standardIcon(Qstyle::PM_ButtonIconsize());
+
 
     connect(ui->previousButton, &QAbstractButton::clicked, this, &music::on_previousButton_clicked);
 
@@ -59,41 +63,13 @@ music::music(QWidget *parent) :
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-
-    connect(sc, SIGNAL(triggered()), this, SLOT(start()));
+   // QAction *sc1 = new QAction(this);
+   // sc1->setShortcut(Qt::Key_Enter);
+   // connect(sc, SIGNAL(triggered()), this, SLOT(start()));
     connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
-
+   // connect(sc1, SIGNAL(triggered()), this, SLOT(on_stopButton_clicked()));
     this->addAction(sc);
-
-   // muteButton = new QToolButton(this);
-   // muteButton->setIcon(style()->standardIcon(QStyle::SP_MediaVolume));
-
-   // connect(muteButton, &QAbstractButton::clicked, this, &music::muteClicked);
-
-//    sliderVolume = new QSlider(Qt::Horizontal, this);
-//    sliderVolume->setRange(0, 100);
-
-    //connect(sliderVolume, &QSlider::valueChanged, this, &music::onVolumeSliderValueChanged);
-
-//    QBoxLayout *layout = new QHBoxLayout;
-//    layout->setContentsMargins(100, 100, 100, 100);
-//      layout->addWidget(stopButton);
-//      layout->addWidget(previousButton);
-//      layout->addWidget(playButton);
-//      layout->addWidget(nextButton);
-//      setLayout(layout);
-
-      //nextButton->setFixedSize(50,50);
-      //previousButton->setFixedSize(50,50);
-     // layout->addWidget(m_muteButton);
-      //layout->addWidget(sliderVolume);
-//   layout->addWidget(m_rateBox);
-
-
-    //  connect (player, &QMediaPlayer::positionChanged, this, &music:: on_positionChanged);
-     // connect (player, &QMediaPlayer::durationChanged, this, &music:: on_durationChanged);
-      //connect (audio , &QSlider:: valueChanged,this, &music:: on_sliderVolume_valueChanged);
-
+    //this->addAction(sc1);
 };
 music::~music()
 {
@@ -101,40 +77,6 @@ music::~music()
     delete ui;
 }
 
-//void music::playClicked()
-//{
-//    switch (playerState) {
-//    case QMediaPlayer::StoppedState:
-//    case QMediaPlayer::PausedState:
-//        emit play();
-//        break;
-//    case QMediaPlayer::PlayingState:
-//        emit pause();
-//        break;
-//    }
-//}
-
-//void music::setState(QMediaPlayer::PlaybackState state)
-//{
-//    if (state != playerState) {
-//        playerState = state;
-
-//        switch (state) {
-//        case QMediaPlayer::StoppedState:
-//            stopButton->setEnabled(false);
-//            playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
-//            break;
-//        case QMediaPlayer::PlayingState:
-//            stopButton->setEnabled(true);
-//            playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPause));
-//            break;
-//        case QMediaPlayer::PausedState:
-//            stopButton->setEnabled(true);
-//            playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
-//            break;
-//        }
-//    }
-//}
 void music :: on_nextButton_clicked(){
 
     count=count%6;
@@ -161,7 +103,7 @@ if(count<0)
 player->play();
 }
 void music :: on_previousButton_clicked(){
-    qDebug()<<"as";
+
     count=count%6;
     count--;
    if(count  ==1){
@@ -187,9 +129,9 @@ player->play();
 
 
 }
-void music::on_startButton_clicked() // for music
+void music::on_startButton_clicked()
 {
-    // load and play the file
+
 
    if(count  ==0){
      player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
@@ -212,18 +154,15 @@ void music::on_startButton_clicked() // for music
       }
 
 
-
-
        timer1->start(10);
 
         player->play();
-        qDebug()<<"hello";
+
 }
 
 
 
-void music::on_stopButton_clicked() // for music
-{
+void music::on_stopButton_clicked() {
     player->stop();
     timer1->stop() ;
 
@@ -231,144 +170,56 @@ void music::on_stopButton_clicked() // for music
 }
 void music::on_Pomodoro_backButton_clicked()
 {
+    timer1->stop();
+    player->stop();
     this->hide();
     QWidget * parent  = this->parentWidget();
     parent->show();
-}
-
-
-//void music:: on_positionChanged(qint64 position)
-//{
-//    ui->sliderProgress->setValue(position);
-//}
-//void music:: on_durationChanged(qint64 position)
-//{
-//    ui->sliderProgress->setMaximum(position);
-//}
-
-//float music::onVolumeSliderValueChanged()
-//{
-//    qreal linearVolume =  QAudio::convertVolume(sliderVolume->value() / qreal(100),
-//                                                QAudio::LogarithmicVolumeScale,
-//                                                QAudio::LinearVolumeScale);
-
-//    return linearVolume;
-
-//}
-
-
-
-
-//float music::volume() const
-//{
-//    qreal linearVolume =  QAudio::convertVolume(audio-> / qreal(100),
-//                                                QAudio::LogarithmicVolumeScale,
-//                                                QAudio::LinearVolumeScale);
-
-//    return linearVolume;
-//}
-
-//float PlayerControls::volume() const
-//{
-//    qreal linearVolume =  QAudio::convertVolume(m_volumeSlider->value() / qreal(100),
-//                                                QAudio::LogarithmicVolumeScale,
-//                                                QAudio::LinearVolumeScale);
-
-//    return linearVolume;
-//}
-
-//void PlayerControls::setVolume(float volume)
-//{
-//    qreal logarithmicVolume = QAudio::convertVolume(volume,
-//                                                    QAudio::LinearVolumeScale,
-//                                                    QAudio::LogarithmicVolumeScale);
-
-//    m_volumeSlider->setValue(qRound(logarithmicVolume * 100));
-//}
-//void music::on_sliderProgress_sliderMoved(int position)
-//{
-//    player->setPosition(position);
-//}
-
-
-
-
-
-
-
-
-void music::start(){
-   // timer1->start(10);
-
-
-
 
 }
-
-void music::stop(){
-    timer1->stop();
-    ui->pushButton1->setText("Start");
-    connect(ui->pushButton1,SIGNAL(clicked()),this,SLOT(start()));
-
-}
-
-void music::reset(){
-    millisecond = second = minute = 0;
-
-   ui->label1->setText(intToQString(minute)+":"+intToQString(second));
-    stop();
-
-}
-
-//void music::on_timerButton_clicked()
-//{
-//    hide();
-//    timerwindow  = new timer(this);
-//    timerwindow->show();
-//}
-
 
 int music:: count=0;
 
 
 void music:: changeTime(){
 
+
+        int option;
+
+
         millisecond++;
-        if(minute==1 && second ==0)
+        QMessageBox msgBox;
+        msgBox.setText("Great Work, Champ!");
+        msgBox.setText("Do you want a break now? ");
+        msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
+        if(minute==25 && second ==0)
         {
-            QMessageBox msgBox;
-            msgBox.setText("Great Work, Champ!");
-            msgBox.setText("Do you want a break now? ");
-            msgBox.setStandardButtons(QMessageBox::Yes| QMessageBox::No);
-            int ret = msgBox.exec();
 
-            switch (ret) {
-              case QMessageBox::Yes:
-                millisecond = minute = second = 0 ;
-
-
-
-                  // Save was clicked
+            option = msgBox.exec();
+            switch(option)
+            {
+                case QMessageBox::Yes:
                 msgBox.close();
-                break;
-              case QMessageBox::No:
-                second = 1;
-                player->play();
+                minute = second =  millisecond = 0 ;
+                ui->label1->setText(intToQString(minute)+":"+intToQString(second));
+                timer1->stop();
+                bsecond = 59; bminute = 4;
+                breaktime();
+                break ;
 
+                case QMessageBox::No :
                 msgBox.close();
+                second++;
+
 
                 break;
-
-
-            }
+         }
 
         }
         if(millisecond>=100){
             millisecond=0;
             second++;
         }
-
-
         if(second>=60){
             second=0;
             minute++;
@@ -377,13 +228,6 @@ void music:: changeTime(){
 
         ui->label1->setText(intToQString(minute)+":"+intToQString(second));
 
-
-        if(player->QMediaPlayer::StoppedState)
-        {
-            player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
-            player->play();
-            qDebug()<<"HEllo";
-        }
     }
 
 QString music:: intToQString(int num){
@@ -396,17 +240,58 @@ QString music:: intToQString(int num){
     return str;
 }
 
+void music:: alert(){
+    if(minute==5 && second == 0){
+        QMessageBox m1 ;
+        m1.setText("Break Finished");
+        m1.exec();
+    }
+}
+void music:: breaktime(){
+
+    QMessageBox breakfinish;
+    breakfinish.setText("Break Finished");
+    breakfinish.setStandardButtons(QMessageBox::Ok);
+
+
+    timer2->start(10);
+    bmillisecond++;
+    if(bmillisecond>=100){
+        bmillisecond = 0 ;
+        bsecond--;
+    }
+    if(bsecond<=0){
+        bsecond = 59;
+        bminute--;
+    }
+     ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
+
+    if(bsecond == 0 && bminute == 0){
+        timer2->stop();
+        bsecond=bminute== 0 ;
+        ui->label1->setText(intToQString(bminute)+":"+intToQString(bsecond));
+
+
+
+        breakfinish.exec();
+        timer1->start(10);
+        changeTime();
+
+        //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
+
+    //timer2->start(10);
+
+
+
+
+
+
+}
+}
 void music::on_pushButton1_clicked()
 
-{   timer1->start(10);
-
-
-  //  connect(ui->pushButton1,SIGNAL(clicked()),this,SLOT(start()));
-//    if(assert(ui->pushButton1->text()=="Start")){
-//        qDebug()<<"hello";
-
-//    }
-
+{
+    timer1->start(10);
 
 }
 void music::on_pushButton2_clicked()
@@ -418,14 +303,10 @@ void music::on_pushButton2_clicked()
 
 }
 
-
-
 void music::on_pushButton3_clicked()
 {
     player->stop();
     timer1->stop();
-   // sysIcon = new QSystemTrayIcon(this);
-   // sysIcon->setIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
 
 }
 

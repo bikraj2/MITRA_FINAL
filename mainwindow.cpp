@@ -6,6 +6,8 @@
 #include<QFileInfo>
 #include<QtDebug>
 #include<iostream>
+#include<QAction>
+#include<QShortcut>
 QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
 QString username;
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
 
     db_conn_open();
 

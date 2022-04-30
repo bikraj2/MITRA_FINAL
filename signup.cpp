@@ -3,6 +3,7 @@
 #include <QtSql>
 #include<QMessageBox>
 #include<mainwindow.h>
+#include<QAction>
 signup::signup(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::signup)
@@ -116,6 +117,7 @@ void signup::encrypt(QString &string_encrypt)
 
 void signup::on_pushButton_2_clicked()
 {
+
     this->hide();
     QWidget *parent = this->parentWidget();
     parent->show();

@@ -17,6 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
      void  db_conn_open();
+
 private slots:
 
 
