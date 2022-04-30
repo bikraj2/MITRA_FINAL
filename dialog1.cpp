@@ -3,10 +3,24 @@
 #include <QtSql>
 #include "mainwindow.h"
 extern QString username;
+QString cs2="QPushButton {"
+        "padding:14; font:bold 17px;color:#3d3397; border-radius:20;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: #3d3397;color:white;"
+    "}";
+
+QString cs3="QFrame {"
+    "}"
+     "QPushButton:hover {"
+        "border-radius:10;"
+        "background-color: #3d3397;"
+    "}";
 Dialog1::Dialog1(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
 {
+
     ui->setupUi(this);
     QSqlQuery pic;
     QString pic_name;
@@ -14,7 +28,6 @@ Dialog1::Dialog1(QWidget *parent) :
     pic.next();
     pic_name=pic.value(0).toString();
     ui->profile->setStyleSheet("image: url(:/profile_pictures/proflies/"+pic_name+");min-width:170px;min-height:170px;");
-
     QSqlQuery qry;
     QString name="select full_name from users where username='"+username+"'";
     qry.exec(name);
@@ -22,8 +35,12 @@ Dialog1::Dialog1(QWidget *parent) :
     QString display_name = qry.value(0).toString();
     display_name=display_name.split(" ")[0];
     ui->display_name->setText(display_name);
-}
+    ui->change->setStyleSheet(cs2);
+    ui->frame_3->setStyleSheet(cs3);
+    ui->frame_4->setStyleSheet(cs3);
+    ui->frame_5->setStyleSheet(cs3);
 
+}
 Dialog1::~Dialog1()
 {
     delete ui;

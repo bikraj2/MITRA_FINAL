@@ -10,13 +10,23 @@
 #include<QShortcut>
 QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
 QString username;
+QString cs1="QPushButton {"
+        "background-color:#e68736;"
+        "border-radius: 10px;"
+        "padding:5;"
+        "font: 18pt ;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: white;"
+        "color:#e68736;"
+     "}";
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
+    ui->pushButton_login_3->setStyleSheet(cs1);
+    ui->pushButton_singup_3->setStyleSheet(cs1);
 
     db_conn_open();
 
@@ -33,6 +43,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_login_3_clicked()
 {
+
  username = ui->username_3->text();
     QString password = ui->Password_3->text();
     encrypt(password);
@@ -77,7 +88,7 @@ void MainWindow:: db_conn_open()
             data.mkpath("C:/Db");
         }
         QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-        info.setDatabaseName("C:/Db/users.db");
+        info.setDatabaseName("/Users/bibhushansaakha/Desktop/full/MITRA_FINAL/users.db");
         info.open();
         if(!info.open())
         {
@@ -170,4 +181,10 @@ void MainWindow::on_pushButton_clicked()
     password1=new ForgotPassword(this);
     password1->show();
 }
+
+
+
+
+
+
 

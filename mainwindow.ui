@@ -7,15 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>315</width>
-    <height>623</height>
+    <height>620</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>315</width>
+    <height>620</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #6adfb0;
-border-radius:20px;</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #6adfb0, stop:1 #367a5f);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -27,7 +32,7 @@ border-radius:20px;</string>
       <property name="styleSheet">
        <string notr="true"> font: bold 100px &quot;Sherif&quot;; color:#2F455C;
 image:url(:/icon/icon/logo.png);
-</string>
+background:none;</string>
       </property>
       <property name="text">
        <string/>
@@ -39,7 +44,7 @@ image:url(:/icon/icon/logo.png);
       <property name="styleSheet">
        <string notr="true">border-radius:20px;margin-top: 1ex;
 font: bold 16pt &quot;Sherif&quot;;
-background-color:#2f455c;
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2f455c, stop:1 #405E7E);
 color:rgb(255, 255, 255);</string>
       </property>
       <property name="title">
@@ -49,7 +54,7 @@ color:rgb(255, 255, 255);</string>
        <item>
         <widget class="QFrame" name="frame">
          <property name="styleSheet">
-          <string notr="true">border:0;</string>
+          <string notr="true">border:0; background:none;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -75,7 +80,7 @@ color:rgb(255, 255, 255);</string>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
              <string notr="true">border:0; ;
-font: 40pt &quot;Bodoni 72 &quot;;
+font:bold 40pt &quot;Bodoni 72 &quot;;
 color:#e6873c;</string>
             </property>
             <property name="text">
@@ -107,7 +112,8 @@ color:#e6873c;</string>
             <widget class="QLabel" name="label_3">
              <property name="styleSheet">
               <string notr="true">border:0;
-font: 15pt ;</string>
+color:#e68736;
+font: bold 15pt ;background:none;</string>
              </property>
              <property name="text">
               <string>Username</string>
@@ -129,7 +135,8 @@ font: 15pt ;</string>
             <widget class="QLabel" name="name_8">
              <property name="styleSheet">
               <string notr="true">border:0;
-font: 15pt ;</string>
+color:#e68736;
+font: bold 15pt ;background:none;</string>
              </property>
              <property name="text">
               <string>Password</string>
@@ -155,6 +162,9 @@ font: 15pt ;</string>
        </item>
        <item>
         <widget class="QFrame" name="frame_2">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -164,6 +174,9 @@ font: 15pt ;</string>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QFrame" name="frame_3">
+            <property name="styleSheet">
+             <string notr="true">background:none;</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -174,10 +187,12 @@ font: 15pt ;</string>
              <item>
               <widget class="QPushButton" name="pushButton_login_3">
                <property name="styleSheet">
-                <string notr="true">background-color:#e68736;
-border-radius: 10px;
-; padding:5;
-font: 18pt ;</string>
+                <string notr="true">	background-color:#e68736;
+	border-radius: 10px;
+	padding:5;
+	font: 18pt ;
+
+</string>
                </property>
                <property name="text">
                 <string>Login</string>
@@ -187,13 +202,25 @@ font: 18pt ;</string>
              <item>
               <widget class="QPushButton" name="pushButton_singup_3">
                <property name="styleSheet">
-                <string notr="true">background-color:#e6873c;
-border-radius: 10px;
-font: 17pt  ; padding:5;
+                <string notr="true">	background-color:#e68736;
+	border-radius: 10px;
+	padding:5;
+	font: 18pt ;
+
 </string>
                </property>
                <property name="text">
                 <string>SignUp</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="styleSheet">
+                <string notr="true">background:none; font:12;</string>
+               </property>
+               <property name="text">
+                <string>Forgot Password?</string>
                </property>
               </widget>
              </item>
@@ -217,16 +244,6 @@ font: 17pt  ; padding:5;
         </spacer>
        </item>
       </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="styleSheet">
-       <string notr="true">color:#2f455c; font: 18px &quot;Sherif&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Forgot Password?</string>
-      </property>
      </widget>
     </item>
    </layout>
