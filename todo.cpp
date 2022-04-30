@@ -57,11 +57,12 @@ bool todo::on_pushButton_27_clicked()
     }
     QSqlQuery qry,check1,check2;
 
-    QString check1_qry="Select * from not_started where username = '"+username+" and 'taskname='"+task+"'";
+    QString check1_qry="Select * from not_started where username = '"+username+"' and taskname='"+task+"'";
 
-    QString check2_qry="Select * from on_going where username = '"+username+" and 'taskname='"+task+"'";
+    QString check2_qry="Select * from on_going where username = '"+username+"' and taskname='"+task+"'";
     if(check1.exec(check1_qry))
     {
+
         int loop1=0;
          while (check1.next())
         {
@@ -74,6 +75,8 @@ bool todo::on_pushButton_27_clicked()
              return false;
          }
     }
+    else
+        qDebug()<<check1.lastError().text();
     if(check2.exec(check2_qry))
     {
         int loop1=0;
