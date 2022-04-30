@@ -2,15 +2,12 @@
     <qresource prefix="/profile_pictures">
         <file>proflies/3.png</file>
         <file>proflies/4.png</file>
-        <file>proflies/5.png</file>
-        <file>proflies/6.png</file>
-        <file>proflies/7.png</file>
-        <file>proflies/8.png</file>
-        <file>proflies/9.png</file>
         <file>proflies/1.png</file>
         <file>proflies/2.png</file>
-        <file>proflies/0.png</file>
     </qresource>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>proflies/1.png</file>
+        <file>proflies/2.png</file>
+    </qresource>
     <qresource prefix="/new/prefix1"/>
 </RCC>
