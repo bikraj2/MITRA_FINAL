@@ -65,12 +65,12 @@ void Dialog1::on_pushButton_clicked()
 
 void Dialog1::on_change_clicked()
 {
-    QString names[] ={"0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png"};
+    QString names[] ={"1.png","3.png"};
     static int i ;
     i=i+1;
-    if(i>9)
+    if(i>1)
     {
-        i=i%10;
+        i=i%2;
     }
     QSqlQuery qry;
     qry.prepare("update users "
@@ -84,3 +84,24 @@ void Dialog1::on_change_clicked()
 
 
 }
+
+void Dialog1::on_display_name_linkActivated(const QString &link)
+{
+    QString names[] ={"1.png","3.png"};
+    static int i ;
+    i=i+1;
+    if(i>1)
+    {
+        i=i%2;
+    }
+    QSqlQuery qry;
+    qry.prepare("update users "
+                "set Profile_picture='"+names[i]+"'"
+                "where username = '"+username+"'");
+    if(qry.exec())
+;
+        else
+        qDebug()<<qry.lastError().text();
+    ui->profile->setStyleSheet("image: url(:/profile_pictures/proflies/"+names[i]+");min-width:170px;min-height:170px;");
+}
+

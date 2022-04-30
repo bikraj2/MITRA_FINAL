@@ -33,6 +33,8 @@ private slots:
 
     void on_change_clicked();
 
+    void on_display_name_linkActivated(const QString &link);
+
 private:
     Ui::Dialog1 *ui;
      Dialog2 *profilewindow;
