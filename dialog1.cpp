@@ -3,18 +3,20 @@
 #include <QtSql>
 #include "mainwindow.h"
 extern QString username;
-QString cs2="QPushButton {"
-        "padding:14; font:bold 17px;color:#3d3397; border-radius:20;"
+QString cs2="QPushButton {"        "image:url(:/icon/icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame.png);"
+
+
     "}"
      "QPushButton:hover {"
-        "background-color: #3d3397;color:white;"
+        "background-color: white;"
+        "image:url(:/icon/icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame (1).png);"
     "}";
 
 QString cs3="QFrame {"
     "}"
      "QPushButton:hover {"
         "border-radius:10;"
-        "background-color: #3d3397;"
+        "background-color: #E97928;"
     "}";
 Dialog1::Dialog1(QWidget *parent) :
     QDialog(parent),
@@ -35,6 +37,7 @@ Dialog1::Dialog1(QWidget *parent) :
     QString display_name = qry.value(0).toString();
     display_name=display_name.split(" ")[0];
     ui->display_name->setText(display_name);
+    ui->display_name->setAlignment(Qt::AlignCenter);
     ui->change->setStyleSheet(cs2);
     ui->frame_3->setStyleSheet(cs3);
     ui->frame_4->setStyleSheet(cs3);

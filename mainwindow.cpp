@@ -85,11 +85,8 @@ void MainWindow::db_conn_open()
         data.mkpath("C:/D");
     }
     QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
-<<<<<<< HEAD
     info.setDatabaseName("/Users/priyanshu/ProjectMitra/Mitra_Final/users.db");
-=======
-    info.setDatabaseName("/Users/bibhushansaakha/Desktop/full/MITRA_FINAL/users.db");
->>>>>>> main
+
     info.open();
     if (!info.open())
     {

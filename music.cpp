@@ -15,7 +15,7 @@ music::music(QWidget *parent) : QDialog(parent),
     this->setWindowTitle("Music");
 
     QPixmap pix(":/icon/icon/phooo.png");
-    ui->label2->setPixmap(pix.scaled(400, 400, Qt::KeepAspectRatio));
+    ui->label1->setPixmap(pix.scaled(400, 400, Qt::KeepAspectRatio));
 
     player = new QMediaPlayer(this);
     audio = new QAudioOutput(this);
