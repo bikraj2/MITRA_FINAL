@@ -35,6 +35,9 @@ private slots:
     void on_change_clicked();
 
     void on_display_name_linkActivated(const QString &link);
+    void set_quotes();
+    void on_edit_clicked();
+    void load_bio();
 
 private:
     Ui::Dialog1 *ui;

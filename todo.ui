@@ -146,8 +146,8 @@ background:none; </string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>293</width>
-                 <height>371</height>
+                 <width>282</width>
+                 <height>340</height>
                 </rect>
                </property>
               </widget>
@@ -209,8 +209,8 @@ background:none; </string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>294</width>
-                 <height>371</height>
+                 <width>281</width>
+                 <height>340</height>
                 </rect>
                </property>
               </widget>
@@ -272,8 +272,8 @@ background:none; </string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>293</width>
-                 <height>371</height>
+                 <width>282</width>
+                 <height>340</height>
                 </rect>
                </property>
               </widget>
@@ -321,7 +321,7 @@ background:none; </string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="adder_btn">
+       <widget class="QPushButton" name="pushButton_27">
         <property name="styleSheet">
          <string notr="true">background-color: #dfb06a;
 color:#3d3397;

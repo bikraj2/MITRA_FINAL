@@ -82,10 +82,10 @@ void MainWindow::db_conn_open()
     QDir data("C:/Db");
     if (!data.exists())
     {
-        data.mkpath("C:/D");
+        data.mkpath("C:/Db");
     }
     QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
-    info.setDatabaseName("/Users/priyanshu/ProjectMitra/Mitra_Final/users.db");
+    info.setDatabaseName("C:/Db/users.db");
 
     info.open();
     if (!info.open())
@@ -109,8 +109,13 @@ bool MainWindow ::setTable()
                   "username varchar(50),"
                   "password1 varchar(50),"
                   "DOB date,"
-                  "Profile_picture varchar(50) DEFAULT '0.png' "
+                  "Profile_picture varchar(50) DEFAULT '1.png' ,"
+                  "BIO varchar(50) ,"
+                  "Hobbies varchar()"
                   ");";
+    QSqlQuery quotes;
+    QString quote_table="Create table quotes (quote varchar(200))";
+    quotes.exec(quote_table);
     if (table1.exec(qry))
     {
         qDebug() << "Done";

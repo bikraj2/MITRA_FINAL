@@ -98,7 +98,7 @@
      <widget class="QPushButton" name="change">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>100</x>
         <y>0</y>
         <width>150</width>
         <height>50</height>
@@ -172,7 +172,7 @@ text-alignment: center;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="logout">
       <property name="geometry">
        <rect>
         <x>9</x>
@@ -206,7 +206,7 @@ text-alignment: center;
         <x>20</x>
         <y>340</y>
         <width>321</width>
-        <height>231</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -215,13 +215,13 @@ text-alignment: center;
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="bio">
        <property name="geometry">
         <rect>
-         <x>7</x>
-         <y>30</y>
+         <x>0</x>
+         <y>130</y>
          <width>311</width>
-         <height>16</height>
+         <height>81</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -231,13 +231,13 @@ text-alignment: center;
         <string>BIO</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="dob">
        <property name="geometry">
         <rect>
-         <x>7</x>
+         <x>0</x>
          <y>90</y>
          <width>311</width>
-         <height>20</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -247,13 +247,13 @@ text-alignment: center;
         <string>Date Of Birth</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="hobbies">
        <property name="geometry">
         <rect>
-         <x>7</x>
-         <y>160</y>
+         <x>0</x>
+         <y>210</y>
          <width>311</width>
-         <height>20</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -263,10 +263,39 @@ text-alignment: center;
         <string>Hobbies</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="edit">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>260</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Edit</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="username">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>311</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 18pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>username</string>
+       </property>
+      </widget>
      </widget>
      <zorder>profile</zorder>
      <zorder>display_name</zorder>
-     <zorder>pushButton_4</zorder>
+     <zorder>logout</zorder>
      <zorder>frame</zorder>
      <zorder>change</zorder>
     </widget>
@@ -283,267 +312,286 @@ border:0;border-radius:20</string>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item alignment="Qt::AlignLeft|Qt::AlignBottom">
-       <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>178</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">image:url(:/icon/icon/logo.png);
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>11</y>
+        <width>200</width>
+        <height>178</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>178</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image:url(:/icon/icon/logo.png);
 </string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QFrame" name="frame_2">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>800</width>
-          <height>800</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color:#233B57;</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QFrame" name="frame_3">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QPushButton" name="Pomodoro">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>150</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>180</width>
-                <height>180</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:none;
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>88</x>
+        <y>332</y>
+        <width>696</width>
+        <height>322</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>800</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#233B57;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="minimumSize">
+          <size>
+           <width>220</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="Pomodoro">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>180</width>
+              <height>180</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:none;
 image: url(:/icon/icon/pomodoro.jpg);
 </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton">
-              <property name="styleSheet">
-               <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="styleSheet">
+             <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
 padding:10;
 color:#FFF;</string>
-              </property>
-              <property name="text">
-               <string>Pomodoro</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-           <zorder>pushButton</zorder>
-           <zorder>Pomodoro</zorder>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_4">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <widget class="QPushButton" name="pushButton_7">
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">image: url(:/icon/icon/notes.jpg);
+            </property>
+            <property name="text">
+             <string>Pomodoro</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+         <zorder>pushButton</zorder>
+         <zorder>Pomodoro</zorder>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="minimumSize">
+          <size>
+           <width>220</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/icon/icon/notes.jpg);
 
 background-color:none;
 </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="styleSheet">
-               <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="styleSheet">
+             <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
 padding:10;
 color:#FFF;</string>
-              </property>
-              <property name="text">
-               <string>Notes</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-           <zorder>pushButton_2</zorder>
-           <zorder>pushButton_7</zorder>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_5">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>300</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_4">
-            <item>
-             <widget class="QPushButton" name="pushButton_9">
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">image: url(:/icon/icon/schedule.jpg);
+            </property>
+            <property name="text">
+             <string>Notes</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+         <zorder>pushButton_2</zorder>
+         <zorder>pushButton_7</zorder>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_5">
+         <property name="minimumSize">
+          <size>
+           <width>220</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QPushButton" name="pushButton_9">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/icon/icon/schedule.jpg);
 
 background-color:none;
 </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_3">
-              <property name="styleSheet">
-               <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="styleSheet">
+             <string notr="true">font: bold 24pt &quot;Times New Roman&quot;;
 padding:10;
 color:#FFF;</string>
-              </property>
-              <property name="text">
-               <string>Study Progress</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-           <zorder>pushButton_3</zorder>
-           <zorder>pushButton_9</zorder>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QFrame" name="frame_8">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3"/>
-       </widget>
-      </item>
-     </layout>
+            </property>
+            <property name="text">
+             <string>Study Progress</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+         <zorder>pushButton_3</zorder>
+         <zorder>pushButton_9</zorder>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>661</y>
+        <width>22</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+     </widget>
+     <widget class="QLabel" name="quotes">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>40</y>
+        <width>671</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 14pt &quot;Arial&quot;;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>
