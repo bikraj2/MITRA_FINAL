@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include<QMessageBox>
 #include<QtSql>
+
 todo::todo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::todo)
@@ -57,11 +58,12 @@ bool todo::on_pushButton_27_clicked()
     }
     QSqlQuery qry,check1,check2;
 
-    QString check1_qry="Select * from not_started where username = '"+username+" and 'taskname='"+task+"'";
+    QString check1_qry="Select * from not_started where username = '"+username+"' and taskname='"+task+"'";
 
-    QString check2_qry="Select * from on_going where username = '"+username+" and 'taskname='"+task+"'";
+    QString check2_qry="Select * from on_going where username = '"+username+"' and taskname='"+task+"'";
     if(check1.exec(check1_qry))
     {
+
         int loop1=0;
          while (check1.next())
         {
@@ -74,6 +76,8 @@ bool todo::on_pushButton_27_clicked()
              return false;
          }
     }
+    else
+        qDebug()<<check1.lastError().text();
     if(check2.exec(check2_qry))
     {
         int loop1=0;
@@ -143,14 +147,7 @@ void todo::load_not_started()
                    QString delete_qry="Delete from not_started where taskname='"+task+"' and username = '"+username+"'";
                    QSqlQuery insert;
                    QString insert_qry="INSERT INTO on_going (taskname,username) values ('"+task+"','"+username+"')";
-                   if(delete_.exec(delete_qry))
-                   {
-                       qDebug()<<"Deleted my g";
-                   }
-                   else
-                   {
-                       qDebug()<<"NOt delered"+delete_.lastError().text();
-                   }
+                   delete_.exec(delete_qry);
 
                    if(insert.exec(insert_qry))
                    {

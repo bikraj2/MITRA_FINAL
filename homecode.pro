@@ -55,4 +55,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     icons.qrc \
+    profile.qrc \
     songs.qrc

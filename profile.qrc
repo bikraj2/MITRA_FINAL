@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/profile_pictures">
+        <file>proflies/3.png</file>
+        <file>proflies/4.png</file>
+        <file>proflies/1.png</file>
+        <file>proflies/2.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>proflies/1.png</file>
+        <file>proflies/2.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>

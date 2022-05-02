@@ -21,15 +21,20 @@ public:
 private slots:
 
 
-    void on_Profile_clicked();
+
 
     void on_pushButton_3_clicked();
 
-    void on_logouticon_clicked();
+
 
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+
+    void on_logout_clicked();
+    void on_change_clicked();
+
+    void on_display_name_linkActivated(const QString &link);
 
 private:
     Ui::Dialog1 *ui;
