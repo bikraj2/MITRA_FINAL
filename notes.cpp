@@ -114,3 +114,12 @@ void notes::on_actionAbout_Notepad_triggered()
 
 }
 
+
+void notes::on_actionClose_triggered()
+{
+    this->hide();
+    QWidget *parent = this->parentWidget();
+    parent->show();
+}
+
+

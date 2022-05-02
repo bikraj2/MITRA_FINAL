@@ -36,6 +36,8 @@ private slots:
 
     void on_actionAbout_Notepad_triggered();
 
+    void on_actionClose_triggered();
+
 private:
     Ui::notes *ui;
    // string variable
