@@ -1,17 +1,20 @@
 #include "change_password.h"
 #include "ui_change_password.h"
-#include<QtSql>
-#include<QMessageBox>
-#include<QSystemTrayIcon>
-#include<QIcon>
-change_password::change_password(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::change_password)
+#include <QtSql>
+#include <QMessageBox>
+#include <QSystemTrayIcon>
+#include <QIcon>
+change_password::change_password(QWidget *parent) : QDialog(parent),
+                                                    ui(new Ui::change_password)
 {
     ui->setupUi(this);
     ui->mesage->setText("");
     //QIcon * qApp = new QIcon(this);
     //qApp->setWindowIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
+    backbutton = new QPushButton("", this);
+    backbutton->setGeometry(QRect(QPoint(100, 100), QSize(200, 50)));
+    backbutton->setIcon(QIcon(":/icon/icon/arrow-left-solid.png"));
+    backbutton->setStyleSheet("color:red");
 }
 change_password::~change_password()
 {
@@ -21,14 +24,14 @@ change_password::~change_password()
 bool change_password::on_pushButton_clicked()
 {
 
-    extern QString  username2,DOB,nickname;
-    QString new_p,confirm_p;
-    new_p=ui->new_p->text();
-    confirm_p=ui->confirm_p->text();
+    extern QString username2, DOB, nickname;
+    QString new_p, confirm_p;
+    new_p = ui->new_p->text();
+    confirm_p = ui->confirm_p->text();
     QRegularExpression password_pattern("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&-+=()])(?=\\S+$).*$");
     QRegularExpressionMatch password_is_valid = password_pattern.match(new_p);
 
-    if(new_p!=confirm_p)
+    if (new_p != confirm_p)
     {
         ui->mesage->setText("The passwords donot match");
         ui->new_p->setText("");
@@ -36,34 +39,34 @@ bool change_password::on_pushButton_clicked()
         return 0;
     }
 
-    if(password_is_valid.hasMatch())
+    if (password_is_valid.hasMatch())
     {
         encrypt(new_p);
         QSqlQuery change;
 
-        QString qry= "Update users set password1 ='"+new_p+"' where username= '"+username2+"'";
+        QString qry = "Update users set password1 ='" + new_p + "' where username= '" + username2 + "'";
         if (change.exec(qry))
         {
-            QMessageBox::information(this,"Done","Your password is changed successfully");
+            QMessageBox::information(this, "Done", "Your password is changed successfully");
             this->hide();
             QWidget *parent = this->parentWidget();
             parent->show();
         }
         else
         {
-             QMessageBox::information(this,"Done",change.lastError().text());
+            QMessageBox::information(this, "Done", change.lastError().text());
         }
     }
     else
     {
-        QMessageBox::warning(this,"Invalid Password","Your password must: \n include a letter,symbol and a number\n be at least 8 character long");
+        QMessageBox::warning(this, "Invalid Password", "Your password must: \n include a letter,symbol and a number\n be at least 8 character long");
     }
 }
-void change_password :: encrypt(QString &string_encrypt)
+void change_password ::encrypt(QString &string_encrypt)
 {
 
     QString p_text = string_encrypt;
-    int k=598658, value,ascii;
+    int k = 598658, value, ascii;
     for (int i = 0; i < p_text.size(); i++)
     {
         ascii = (p_text[i]).QChar::unicode();
@@ -88,4 +91,3 @@ void change_password :: encrypt(QString &string_encrypt)
         }
     }
 }
-

@@ -36,5 +36,7 @@ private:
     Dialog1 *firstwindow;
     signup * register1;
     ForgotPassword * password1;
+    void keyPressEvent(QKeyEvent * event);
+
 };
 #endif // MAINWINDOW_H

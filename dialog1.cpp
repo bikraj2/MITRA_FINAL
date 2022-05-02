@@ -3,10 +3,26 @@
 #include <QtSql>
 #include "mainwindow.h"
 extern QString username;
+QString cs2="QPushButton {"        "image:url(:/icon/icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame.png);"
+
+
+    "}"
+     "QPushButton:hover {"
+        "background-color: white;"
+        "image:url(:/icon/icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame (1).png);"
+    "}";
+
+QString cs3="QFrame {"
+    "}"
+     "QPushButton:hover {"
+        "border-radius:10;"
+        "background-color: #E97928;"
+    "}";
 Dialog1::Dialog1(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
 {
+
     ui->setupUi(this);
     QSqlQuery pic;
     QString pic_name;
@@ -14,7 +30,6 @@ Dialog1::Dialog1(QWidget *parent) :
     pic.next();
     pic_name=pic.value(0).toString();
     ui->profile->setStyleSheet("image: url(:/profile_pictures/proflies/"+pic_name+");min-width:170px;min-height:170px;");
-
     QSqlQuery qry;
     QString name="select full_name from users where username='"+username+"'";
     qry.exec(name);
@@ -22,8 +37,13 @@ Dialog1::Dialog1(QWidget *parent) :
     QString display_name = qry.value(0).toString();
     display_name=display_name.split(" ")[0];
     ui->display_name->setText(display_name);
-}
+    ui->display_name->setAlignment(Qt::AlignCenter);
+    ui->change->setStyleSheet(cs2);
+    ui->frame_3->setStyleSheet(cs3);
+    ui->frame_4->setStyleSheet(cs3);
+    ui->frame_5->setStyleSheet(cs3);
 
+}
 Dialog1::~Dialog1()
 {
     delete ui;

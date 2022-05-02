@@ -17,8 +17,11 @@ public:
 private slots:
     bool on_pushButton_clicked();
     void encrypt(QString &string_encrypt);
+
+
 private:
     Ui::change_password *ui;
+    QPushButton *backbutton;
 };
 
 #endif // CHANGE_PASSWORD_H

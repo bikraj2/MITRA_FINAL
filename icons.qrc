@@ -29,7 +29,10 @@
         <file>icon/Play.png</file>
         <file>icon/logo.png</file>
         <file>icon/user_icon.png</file>
+        <file>icon/close.png</file>
         <file>icon/phooo.png</file>
+        <file>icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame.png</file>
+        <file>icon/Blue Simple Gradient Motivation Quote Facebook Profile Frame (1).png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/database">
