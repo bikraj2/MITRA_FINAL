@@ -76,7 +76,8 @@ color:rgb(255, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">border:0; ;
 font: 40pt &quot;Bodoni 72 &quot;;
-color:#e6873c;</string>
+color:#e6873c;
+min-height:100;</string>
             </property>
             <property name="text">
              <string>Sign In</string>
