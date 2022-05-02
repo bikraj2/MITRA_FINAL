@@ -10,6 +10,18 @@
     <height>823</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>823</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -124,7 +136,7 @@ background:none; </string>
          <item>
           <widget class="QFrame" name="frame_5">
            <property name="styleSheet">
-            <string notr="true">background-color:white;</string>
+            <string notr="true">background-color:white; padding:0; margin:0;</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -132,11 +144,29 @@ background:none; </string>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_8">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QScrollArea" name="not_started">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>32</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>323</width>
+                <height>401</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>323</width>
+                <height>401</height>
+               </size>
+              </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">padding:0;margin:0;</string>
               </property>
               <property name="widgetResizable">
                <bool>true</bool>
@@ -146,8 +176,8 @@ background:none; </string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>293</width>
-                 <height>371</height>
+                 <width>323</width>
+                 <height>401</height>
                 </rect>
                </property>
               </widget>
@@ -196,8 +226,20 @@ background:none; </string>
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_7">
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QScrollArea" name="on_going">
+              <property name="minimumSize">
+               <size>
+                <width>323</width>
+                <height>401</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>323</width>
+                <height>401</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -209,7 +251,7 @@ background:none; </string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>294</width>
+                 <width>293</width>
                  <height>371</height>
                 </rect>
                </property>
@@ -261,6 +303,18 @@ background:none; </string>
            <layout class="QVBoxLayout" name="verticalLayout_6">
             <item>
              <widget class="QScrollArea" name="completed">
+              <property name="minimumSize">
+               <size>
+                <width>323</width>
+                <height>401</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>401</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -316,15 +370,15 @@ background:none; </string>
       <item>
        <widget class="QLineEdit" name="task_adder">
         <property name="styleSheet">
-         <string notr="true">background-color:white; padding:7; border-radius:10; color:#2f455c; font: bold &quot;Sherif&quot;;</string>
+         <string notr="true">background-color:white; padding:7; border-radius:10; color:#2f455c; font: bold &quot;Sherif&quot;;min-width:150;min-height:26;max-width:150; max-height:26;</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="adder_btn">
+       <widget class="QPushButton" name="pushButton_27">
         <property name="styleSheet">
-         <string notr="true">background-color: #dfb06a;
-color:#3d3397;
+         <string notr="true">background-color: #e68736;
+color:white;
 font: bold 20px,  &quot;Sherif&quot; ; 
 border-width: 5px;
 border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>
@@ -387,8 +441,8 @@ border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>
          <item>
           <widget class="QPushButton" name="pushButton_26">
            <property name="styleSheet">
-            <string notr="true">background-color: #dfb06a;
-color:#3d3397;
+            <string notr="true">background-color: #e68736;
+color:white;
 font: bold 20px,  &quot;Sherif&quot; ; 
 border-width: 5px;
 border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>

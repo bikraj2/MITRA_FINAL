@@ -6,11 +6,30 @@
 #include<QMessageBox>
 #include<QtSql>
 
+QString cs5="QPushButton {"
+        "background-color: #e68736;\ncolor:white;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:10; padding-left:35;padding-right:35;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: white;"
+        "color: #2f455c;"
+     "}";
+
+QString cs6="QPushButton {"
+        "max-width:20;background-color: #2f455c;\ncolor:white;border-radius: 10px;padding:8;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: #e68736;"
+        "color: white;"
+     "}";
+
 todo::todo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::todo)
 {
     ui->setupUi(this);
+    ui->pushButton_27->setStyleSheet(cs5);
+    ui->pushButton_26->setStyleSheet(cs5);
+    ui->task_adder->setMaxLength(21);
     MainWindow x;
     x.db_conn_open();
     load_not_started();
@@ -131,14 +150,14 @@ void todo::load_not_started()
                QHBoxLayout* taskname = new QHBoxLayout(this);
                QLabel * title = new QLabel;
                QPushButton *details = new QPushButton(this);
-               details->setText("Shift");
+               details->setText(">");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                not_started->addLayout(taskname,pos1,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
@@ -194,14 +213,14 @@ void todo::load_in_progress()
                QHBoxLayout* taskname = new QHBoxLayout(this);
                QLabel * title = new QLabel(this);
                QPushButton *details = new QPushButton(this);
-               details->setText("Shift");
+               details->setText(">");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                not_started->addLayout(taskname,pos2,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
@@ -264,13 +283,13 @@ void todo:: load_completed()
                QPushButton *details = new QPushButton(this);
                details->setStyleSheet("min-width: 150px;");
                QSize size= QSize(4,4);
-               details->setText("Delete");
+               details->setText("X");
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                completed->addLayout(taskname,pos3,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
