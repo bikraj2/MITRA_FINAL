@@ -14,15 +14,14 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #6adfb0;
-border-radius: 300px;
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #6adfb0, stop:1 #367a5f);border-radius: 300px;
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame_6">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background:none;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -49,7 +48,7 @@ border-radius: 300px;
         <property name="styleSheet">
          <string notr="true">font-size: 60px ;
 font: bold large &quot;Sherif&quot;;
-color:#3d3397;</string>
+color:white; background:none;</string>
         </property>
         <property name="text">
          <string>Your Progress</string>
@@ -78,7 +77,7 @@ color:#3d3397;</string>
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background:none;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -98,79 +97,202 @@ color:#3d3397;</string>
        </widget>
       </item>
       <item>
-       <widget class="QScrollArea" name="not_started">
+       <widget class="QFrame" name="to_be_started_main">
         <property name="styleSheet">
-         <string notr="true">background-color: #3d3397;border-radius:30;
-
-</string>
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2f455c, stop:1 #405E7E); border-radius:20; padding-left:15;padding-right:15; padding-bottom:15;</string>
         </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_3">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>416</width>
-           <height>473</height>
-          </rect>
-         </property>
-        </widget>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true">font-size: 30px ;
+font: bold large &quot;Sherif&quot;;
+color:white;
+background:none; </string>
+           </property>
+           <property name="text">
+            <string>To Be Started:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_5">
+           <property name="styleSheet">
+            <string notr="true">background-color:white;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QScrollArea" name="not_started">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_3">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>293</width>
+                 <height>371</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
-       <widget class="QScrollArea" name="on_going">
+       <widget class="QFrame" name="to_be_started_main_2">
         <property name="styleSheet">
-         <string notr="true">background-color: #3d3397;border-radius:30;</string>
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2f455c, stop:1 #405E7E); border-radius:20; padding-left:15;padding-right:15; padding-bottom:15;</string>
         </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>415</width>
-           <height>473</height>
-          </rect>
-         </property>
-        </widget>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true">font-size: 30px ;
+font: bold large &quot;Sherif&quot;;
+color:white;
+background:none; </string>
+           </property>
+           <property name="text">
+            <string>In Progress:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_7">
+           <property name="styleSheet">
+            <string notr="true">background-color:white;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QScrollArea" name="on_going">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>294</width>
+                 <height>371</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
-       <widget class="QScrollArea" name="completed">
+       <widget class="QFrame" name="to_be_started_main_3">
         <property name="styleSheet">
-         <string notr="true">background-color: #3d3397;border-radius:30;</string>
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2f455c, stop:1 #405E7E); border-radius:20; padding-left:15;padding-right:15; padding-bottom:15;</string>
         </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>416</width>
-           <height>473</height>
-          </rect>
-         </property>
-        </widget>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">font-size: 30px ;
+font: bold large &quot;Sherif&quot;;
+color:white;
+background:none; </string>
+           </property>
+           <property name="text">
+            <string>Completed:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_8">
+           <property name="styleSheet">
+            <string notr="true">background-color:white;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QScrollArea" name="completed">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>293</width>
+                 <height>371</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="test1">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QFrame" name="frame_19">
+     <property name="styleSheet">
+      <string notr="true">background:none;</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -199,7 +321,7 @@ color:#3d3397;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_27">
+       <widget class="QPushButton" name="adder_btn">
         <property name="styleSheet">
          <string notr="true">background-color: #dfb06a;
 color:#3d3397;
@@ -230,6 +352,9 @@ border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>
    </item>
    <item>
     <widget class="QFrame" name="frame_2">
+     <property name="styleSheet">
+      <string notr="true">background:none;</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
