@@ -4,12 +4,24 @@
 #include<QMessageBox>
 #include<QSystemTrayIcon>
 #include<QIcon>
+QString cs8="QPushButton {"
+        "background-color: white;color:#59253A;"
+        "border-radius: 10px;"
+        "padding:7;"
+        "font:bold 18pt ;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: #59253A;"
+        "color:white;"
+     "}";
 change_password::change_password(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::change_password)
 {
     ui->setupUi(this);
     ui->mesage->setText("");
+    ui->pushButton->setStyleSheet(cs8);
+    ui->pushButton_2->setStyleSheet(cs8);
     //QIcon * qApp = new QIcon(this);
     //qApp->setWindowIcon("C:/Users/Lenovo/OneDrive/Desktop/phooo.png");
 }
@@ -23,6 +35,7 @@ bool change_password::on_pushButton_clicked()
 
     extern QString  username2,DOB,nickname;
     QString new_p,confirm_p;
+
     new_p=ui->new_p->text();
     confirm_p=ui->confirm_p->text();
     QRegularExpression password_pattern("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&-+=()])(?=\\S+$).*$");
@@ -87,5 +100,13 @@ void change_password :: encrypt(QString &string_encrypt)
             string_encrypt[i] = static_cast<char>(ascii);
         }
     }
+}
+
+
+void change_password::on_pushButton_2_clicked()
+{
+    this->hide();
+    QWidget *parent = this->parentWidget();
+    parent->show();
 }
 

@@ -7,21 +7,21 @@
 #include<QtSql>
 
 QString cs5="QPushButton {"
-        "background-color: #e68736;\ncolor:white;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:10; padding-left:35;padding-right:35;"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #0677A1, stop:1 #2D4159);;color:white;font: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:10; padding-left:35;padding-right:35;"
     "}"
      "QPushButton:hover {"
-        "background-color: white;"
-        "color: #2f455c;"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #0677A1);"
+        "color: white;"
+        "min-height:50;min-width:120;"
      "}";
 
 QString cs6="QPushButton {"
-        "max-width:20;background-color: #2f455c;\ncolor:white;border-radius: 10px;padding:8;"
+        "max-width:20;background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #0677A1, stop:1 #2D4159);;\ncolor:white;border-radius: 10px;padding:8;"
     "}"
      "QPushButton:hover {"
-        "background-color: #e68736;"
-        "color: white;"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #0677A1);"
+        "color:white;"
      "}";
-
 todo::todo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::todo)
@@ -30,11 +30,13 @@ todo::todo(QWidget *parent) :
     ui->pushButton_27->setStyleSheet(cs5);
     ui->pushButton_26->setStyleSheet(cs5);
     ui->task_adder->setMaxLength(21);
+
     MainWindow x;
     x.db_conn_open();
     load_not_started();
     load_in_progress();
     load_completed();
+
 }
 
 todo::~todo()
@@ -136,6 +138,7 @@ void todo::load_not_started()
     QGridLayout* not_started =new QGridLayout(this);
     QWidget * widgets = new QWidget(this);
     QScrollArea * area = ui->not_started;
+    area->setStyleSheet("background-color:white; padding:0; margin:0;");
     widgets->setLayout(not_started);
     area->setWidget(widgets);
 

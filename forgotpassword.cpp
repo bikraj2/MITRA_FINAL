@@ -3,11 +3,23 @@
 #include<QtSql>
 #include<QMessageBox>
 QString  username2,DOB,nickname;
+QString cs7="QPushButton {"
+        "background-color: white;color:#59253A;"
+        "border-radius: 10px;"
+        "padding:7;"
+        "font:bold 18pt ;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: #59253A;"
+        "color:white;"
+     "}";
 ForgotPassword::ForgotPassword(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ForgotPassword)
 {
     ui->setupUi(this);
+    ui->pushButton->setStyleSheet(cs7);
+    ui->pushButton_2->setStyleSheet(cs7);
 }
 
 ForgotPassword::~ForgotPassword()
