@@ -9,6 +9,8 @@ notes::notes(QWidget *parent) :
     ui(new Ui::notes)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Notepad");
+
     this->setCentralWidget(ui->textEdit);
 }
 

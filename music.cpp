@@ -27,7 +27,7 @@ music::music(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
 
-    this->setWindowTitle("Music");
+    this->setWindowTitle("Pomodoro");
    ui->pushButton1->setStyleSheet(css1);
    ui->pushButton2->setStyleSheet(css1);
     ui->pushButton3->setStyleSheet(css1);

@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("LogIn");
+
     ui->pushButton_login_3->setStyleSheet(cs1);
     ui->pushButton_singup_3->setStyleSheet(cs1);
 

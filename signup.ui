@@ -14,7 +14,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #6adfb8;</string>
+   <string notr="true">background-color: #59253A;
+;;border-radius: 300px;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -30,7 +31,7 @@
        <widget class="QPushButton" name="pushButton_2">
         <property name="styleSheet">
          <string notr="true">image:url(:/icon/icon/arrow-left-solid.png);
-background-color:#e68736; border:0; border-radius:10; padding:5;</string>
+background-color:#rgb(232, 222, 217); border:0; border-radius:10; padding:5;</string>
         </property>
         <property name="text">
          <string/>
@@ -53,7 +54,8 @@ background-color:#e68736; border:0; border-radius:10; padding:5;</string>
       <item>
        <widget class="QLabel" name="label_3">
         <property name="styleSheet">
-         <string notr="true">color:#2f455c; font: bold 50px &quot;Sherif&quot;;</string>
+         <string notr="true">color:#fff; font:  50px &quot;Sherif&quot;;
+background:none;</string>
         </property>
         <property name="text">
          <string>Sign Up</string>
@@ -85,7 +87,8 @@ background-color:#e68736; border:0; border-radius:10; padding:5;</string>
 margin-top: 1ex;
 font: 16pt bold &quot;Sherif&quot;;
 background-color:#2f455c;
-color:rgb(255, 255, 255);</string>
+color:rgb(255, 255, 255);
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #78244C);</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -93,7 +96,7 @@ color:rgb(255, 255, 255);</string>
           <item>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
-             <string notr="true">font: bold &quot;Sherif&quot;;</string>
+             <string notr="true">font: bold &quot;Sherif&quot;;background-color:none;</string>
             </property>
             <property name="text">
              <string>Full Name</string>
@@ -115,7 +118,7 @@ font: bold &quot;Sherif&quot;;</string>
           <item>
            <widget class="QLabel" name="label_4">
             <property name="styleSheet">
-             <string notr="true">font: bold &quot;Sherif&quot;;</string>
+             <string notr="true">font: bold &quot;Sherif&quot;;background-color:none;</string>
             </property>
             <property name="text">
              <string>Date of Birth</string>
@@ -137,7 +140,7 @@ font: bold &quot;Sherif&quot;;</string>
           <item>
            <widget class="QLabel" name="label_5">
             <property name="styleSheet">
-             <string notr="true">font: bold &quot;Sherif&quot;;</string>
+             <string notr="true">font: bold &quot;Sherif&quot;;background-color:none;</string>
             </property>
             <property name="text">
              <string>UserName</string>
@@ -159,7 +162,7 @@ font: bold &quot;Sherif&quot;;</string>
           <item>
            <widget class="QLabel" name="label_6">
             <property name="styleSheet">
-             <string notr="true">font: bold &quot;Sherif&quot;;</string>
+             <string notr="true">font: bold &quot;Sherif&quot;;background-color:none;</string>
             </property>
             <property name="text">
              <string>Password</string>
@@ -197,7 +200,8 @@ font: bold &quot;Sherif&quot;;</string>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
-             <string notr="true">font: bold &quot;Sherif&quot;;</string>
+             <string notr="true">font: bold &quot;Sherif&quot;;
+background-color:none;</string>
             </property>
             <property name="text">
              <string>Your Nickname</string>
@@ -259,6 +263,10 @@ font: bold &quot;Sherif&quot;;</string>
         </item>
         <item>
          <widget class="QFrame" name="frame_2">
+          <property name="styleSheet">
+           <string notr="true">border:none;
+background-color:none;</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -284,7 +292,7 @@ font: bold &quot;Sherif&quot;;</string>
              <property name="styleSheet">
               <string notr="true">border-radius:5px;
 font: bold  &quot;Sherif&quot;;
-background-color:#e68736;
+background-color:#895061;
 color:rgb(255, 255, 255);
 padding:8;padding-left:15;padding-right:15;</string>
              </property>

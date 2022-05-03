@@ -27,6 +27,8 @@ todo::todo(QWidget *parent) :
     ui(new Ui::todo)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Todo List");
+
     ui->pushButton_27->setStyleSheet(cs5);
     ui->pushButton_26->setStyleSheet(cs5);
     ui->task_adder->setMaxLength(21);

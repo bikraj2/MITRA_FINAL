@@ -29,16 +29,19 @@ QString cs="QFrame{"
         "}";
 
 QString css4=
-        "QFrame{"
-        "font:20pt;"
-        "font:Arial"
-        "font:Bold"
-"border: none;"
-"color: #FFF;"
-        "}"
+        "QPushButton{"
+        "background-color:white;"
+        "color:black;"
+        "font:18pt bold;"
+        "border-radius:10px;"
 
-        "QPushButton:hover {"
+        "}"        "QPushButton:hover {"
         "background-color: #E97928;"
+        "color:#FFF;"
+        "font:22pt bold;"
+        "border-radius:5px;"
+
+
 
     "}";
 QString css="QFrame{"
@@ -58,6 +61,7 @@ Dialog1::Dialog1(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    this->setWindowTitle("Homescreen");
     QSqlQuery pic;
     load_bio();
     QString pic_name;
@@ -77,8 +81,8 @@ Dialog1::Dialog1(QWidget *parent) :
     ui->frame_3->setStyleSheet(cs3);
     ui->frame_4->setStyleSheet(cs3);
     ui->frame_5->setStyleSheet(cs3);
-
     ui->edit->setStyleSheet(css4);
+
 
     set_quotes();
 }

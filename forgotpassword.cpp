@@ -18,6 +18,8 @@ ForgotPassword::ForgotPassword(QWidget *parent) :
     ui(new Ui::ForgotPassword)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Forgot Password");
+
     ui->pushButton->setStyleSheet(cs7);
     ui->pushButton_2->setStyleSheet(cs7);
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>716</height>
+    <width>1574</width>
+    <height>1238</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -248,8 +248,7 @@ text-alignment: center;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">
-</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Edit</string>
@@ -576,23 +575,6 @@ color:#FFF;</string>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QFrame" name="frame_8">
-      <property name="geometry">
-       <rect>
-        <x>11</x>
-        <y>661</y>
-        <width>22</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3"/>
      </widget>
      <widget class="QLabel" name="quotes">
       <property name="geometry">
