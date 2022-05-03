@@ -21,6 +21,37 @@ QString cs3="QFrame {"
         "border-radius:10;"
         "background-color: #E97928;"
     "}";
+QString cs="QFrame{"
+        "color:#939294;"
+            "font:20pt;"
+            "font:Times New Roman;"
+
+        "}";
+
+QString css4=
+        "QFrame{"
+        "font:20pt;"
+        "font:Arial"
+        "font:Bold"
+"border: none;"
+"color: #FFF;"
+        "}"
+
+        "QPushButton:hover {"
+        "background-color: #E97928;"
+
+    "}";
+QString css="QFrame{"
+        "color:#939294;"
+            "font: 20pt;"
+        "font:bold;"
+            "font:Baskerville;"
+        "font:Italic;"
+        "border:0.5px solid #939294;"
+        "border-radius:10px;"
+        "text-align:AlignHCenter;"
+
+        "}";
 Dialog1::Dialog1(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog1)
@@ -46,6 +77,9 @@ Dialog1::Dialog1(QWidget *parent) :
     ui->frame_3->setStyleSheet(cs3);
     ui->frame_4->setStyleSheet(cs3);
     ui->frame_5->setStyleSheet(cs3);
+
+    ui->edit->setStyleSheet(css4);
+
     set_quotes();
 }
 Dialog1::~Dialog1()
@@ -65,9 +99,17 @@ void Dialog1:: load_bio()
     hobbies=qry.value(2).toString();
     username="@"+::username;
     ui->bio->setText(bio);
+    ui->bio->setStyleSheet(cs);
+    ui->bio->setAlignment(Qt::AlignCenter);
     ui->dob->setText(dob);
+    ui->dob->setStyleSheet(cs);
+      ui->dob->setAlignment(Qt::AlignCenter);
     ui->hobbies->setText(hobbies);
+     ui->hobbies->setAlignment(Qt::AlignCenter);
+    ui->hobbies->setStyleSheet(cs);
     ui->username->setText(username);
+    ui->username->setStyleSheet(css);
+    ui->username->setAlignment(Qt::AlignCenter);
 }
 void Dialog1::set_quotes()
 {
@@ -87,6 +129,7 @@ void Dialog1::set_quotes()
         }
         quote=qry.value(0).toString();
         ui->quotes->setText(quote);
+        ui->quotes->setStyleSheet(css);
 
     }
 }

@@ -6,6 +6,21 @@
 #include <QAction>
 #include <QPixmap>
 #include <QSystemTrayIcon>
+QString css1
+{
+    "QFrame {""border:none;"
+     "border-radius:10px;"
+    "color:white;"
+
+
+        "}"
+         "QPushButton:hover {"
+        "border:none;"
+            "border-radius:10px;"
+            "background-color: #ED6605;"
+        "}"
+
+};
 
 music::music(QWidget *parent) : QDialog(parent),
                                 ui(new Ui::music)
@@ -13,6 +28,11 @@ music::music(QWidget *parent) : QDialog(parent),
     ui->setupUi(this);
 
     this->setWindowTitle("Music");
+   ui->pushButton1->setStyleSheet(css1);
+   ui->pushButton2->setStyleSheet(css1);
+    ui->pushButton3->setStyleSheet(css1);
+
+
 
     QPixmap pix(":/icon/icon/phooo.png");
     ui->label1->setPixmap(pix.scaled(400, 400, Qt::KeepAspectRatio));
@@ -31,7 +51,7 @@ music::music(QWidget *parent) : QDialog(parent),
     ui->playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
     QFont font = ui->label1->font();
     font.setBold(true);
-    font.setPointSize(40);
+    font.setPointSize(120);
     ui->label1->setFont(font);
     ui->label1->setText(intToQString(minute) + ":" + intToQString(second));
 
@@ -298,3 +318,9 @@ void music::on_pushButton3_clicked()
     player->stop();
     timer1->stop();
 }
+
+void music::on_pushButton_clicked()
+{
+
+}
+

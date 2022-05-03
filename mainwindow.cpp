@@ -12,14 +12,14 @@
 QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
 QString username;
 QString cs1 = "QPushButton {"
-              "background-color:#e68736;"
+              "background-color:#895061;"
               "border-radius: 10px;"
               "padding:5;"
               "font: 18pt ;"
               "}"
               "QPushButton:hover {"
               "background-color: white;"
-              "color:#e68736;"
+              "color:#895061;"
               "}";
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -85,7 +85,7 @@ void MainWindow::db_conn_open()
         data.mkpath("C:/Db");
     }
     QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
-    info.setDatabaseName("C:/Db/users.db");
+    info.setDatabaseName("/Users/priyanshu/ProjectMitra/MITRA_FINAL/users.db");
 
     info.open();
     if (!info.open())

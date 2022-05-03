@@ -73,6 +73,8 @@ private slots:
 
     void on_pushButton3_clicked();
 
+    void on_pushButton_clicked();
+
 private:
 
     static int count;

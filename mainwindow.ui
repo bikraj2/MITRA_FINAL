@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:  #6adfb0</string>
+   <string notr="true">background-color:  #59253A;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -36,8 +36,8 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true"> font: bold 100px &quot;Sherif&quot;; color:#2F455C;
-image:url(:/icon/icon/logo.png);
+       <string notr="true"> font: bold 100px &quot;Sherif&quot;; 
+image:url(:/icon/icon/MITRA (1).png);
 background:none;</string>
       </property>
       <property name="text">
@@ -50,7 +50,7 @@ background:none;</string>
       <property name="styleSheet">
        <string notr="true">border-radius:20px;margin-top: 1ex;
 font: bold 16pt &quot;Sherif&quot;;
-background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2f455c, stop:1 #405E7E);
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #78244C);
 color:rgb(255, 255, 255);</string>
       </property>
       <property name="title">
@@ -86,7 +86,7 @@ color:rgb(255, 255, 255);</string>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
              <string notr="true">border:0; ;
-font:bold 40pt &quot;Bodoni 72 &quot;;
+font: 40pt &quot;Bodoni 72 &quot;;
 color:white;</string>
             </property>
             <property name="text">
@@ -118,7 +118,7 @@ color:white;</string>
             <widget class="QLabel" name="label_3">
              <property name="styleSheet">
               <string notr="true">border:0;
-color:#e68736;
+color:#FFF;
 font: bold 15pt ;background:none;</string>
              </property>
              <property name="text">
@@ -141,7 +141,7 @@ font: bold 15pt ;background:none;</string>
             <widget class="QLabel" name="name_8">
              <property name="styleSheet">
               <string notr="true">border:0;
-color:#e68736;
+color:#FFF;
 font: bold 15pt ;background:none;</string>
              </property>
              <property name="text">
@@ -193,7 +193,7 @@ font: bold 15pt ;background:none;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">	background-color:#e68736;
+             <string notr="true">	background-color:#895061;
 	border-radius: 10px;
 	padding:5;
 	font: 18pt ;
@@ -220,7 +220,7 @@ font: bold 15pt ;background:none;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">	background-color:#e68736;
+             <string notr="true">	background-color:#895061;
 	border-radius: 10px;
 	padding:5;
 	font: 18pt ;
