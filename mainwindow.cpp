@@ -82,7 +82,7 @@ void MainWindow::db_conn_open()
     QDir data("C:/Db");
     if (!data.exists())
     {
-        data.mkpath("C:/Db");
+        data.mkpath("/Users/bibhushansaakha/Desktop/super/MITRA_FINAL/users.db");
     }
     QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
     info.setDatabaseName("C:/Db/users.db");
