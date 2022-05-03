@@ -6,16 +6,37 @@
 #include<QMessageBox>
 #include<QtSql>
 
+QString cs5="QPushButton {"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #0677A1, stop:1 #2D4159);;color:white;font: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:10; padding-left:35;padding-right:35;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #0677A1);"
+        "color: white;"
+        "min-height:50;min-width:120;"
+     "}";
+
+QString cs6="QPushButton {"
+        "max-width:20;background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #0677A1, stop:1 #2D4159);;\ncolor:white;border-radius: 10px;padding:8;"
+    "}"
+     "QPushButton:hover {"
+        "background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 #2D4159, stop:1 #0677A1);"
+        "color:white;"
+     "}";
 todo::todo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::todo)
 {
     ui->setupUi(this);
+    ui->pushButton_27->setStyleSheet(cs5);
+    ui->pushButton_26->setStyleSheet(cs5);
+    ui->task_adder->setMaxLength(21);
+
     MainWindow x;
     x.db_conn_open();
     load_not_started();
     load_in_progress();
     load_completed();
+
 }
 
 todo::~todo()
@@ -117,6 +138,7 @@ void todo::load_not_started()
     QGridLayout* not_started =new QGridLayout(this);
     QWidget * widgets = new QWidget(this);
     QScrollArea * area = ui->not_started;
+    area->setStyleSheet("background-color:white; padding:0; margin:0;");
     widgets->setLayout(not_started);
     area->setWidget(widgets);
 
@@ -131,14 +153,14 @@ void todo::load_not_started()
                QHBoxLayout* taskname = new QHBoxLayout(this);
                QLabel * title = new QLabel;
                QPushButton *details = new QPushButton(this);
-               details->setText("Shift");
+               details->setText(">");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                not_started->addLayout(taskname,pos1,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
@@ -194,14 +216,14 @@ void todo::load_in_progress()
                QHBoxLayout* taskname = new QHBoxLayout(this);
                QLabel * title = new QLabel(this);
                QPushButton *details = new QPushButton(this);
-               details->setText("Shift");
+               details->setText(">");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                not_started->addLayout(taskname,pos2,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
@@ -264,13 +286,13 @@ void todo:: load_completed()
                QPushButton *details = new QPushButton(this);
                details->setStyleSheet("min-width: 150px;");
                QSize size= QSize(4,4);
-               details->setText("Delete");
+               details->setText("X");
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
-               title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-               details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
+               title->setStyleSheet("color: #2f455c;\nfont-size: 20px ;\nfont: bold large;max-width:200;");
+               details->setStyleSheet(cs6);
                completed->addLayout(taskname,pos3,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
