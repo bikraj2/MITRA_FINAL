@@ -177,17 +177,12 @@ void todo::load_not_started()
                    {
                        if(delete_.exec(delete_qry))
                        {
-                           qDebug()<<"Insert";
                            pos1=0;
                            pos2=0;
                            load_not_started();
                            load_in_progress();
                            load_completed();
                        }
-                   }
-                           else
-                   {
-                           qDebug()<<"Not inserted";
                    }
                });
                pos1+=1;
@@ -234,20 +229,14 @@ void todo::load_in_progress()
                    QString delete_qry="Delete from on_going where taskname='"+task+"' and username ='"+username+"'";
                    QSqlQuery insert;
                    QString insert_qry="INSERT INTO completed (taskname,username) values ('"+task+"','"+username+"')";
-                   if(delete_.exec(delete_qry))
-                   {
-                       qDebug()<<"Deleted my g";
-                   }
-                   else
-                   {
-                       qDebug()<<"NOt delered"+delete_.lastError().text();
-                   }
+                   delete_.exec(delete_qry);
+
 
                    if(insert.exec(insert_qry))
                    {
                        if(delete_.exec(delete_qry))
                        {
-                           qDebug()<<"Insert";
+
                            pos1=0;
                            pos2=0;
                            load_not_started();
@@ -255,10 +244,7 @@ void todo::load_in_progress()
                            load_completed();
                        }
                    }
-                           else
-                   {
-                           qDebug()<<"Not inserted";
-                   }
+
                });
                pos2+=1;
                 }
@@ -304,17 +290,13 @@ void todo:: load_completed()
 
                    if(delete_.exec(delete_qry))
                    {
-                       qDebug()<<"Deleted my g";
                    }
                    else
                    {
-                       qDebug()<<"NOt delered"+delete_.lastError().text();
+                       qDebug()<<"Not deleted"+delete_.lastError().text();
                    }
-
-
                        if(delete_.exec(delete_qry))
-                       {
-                           qDebug()<<"Insert";
+                       { 
                            pos1=0;
                            pos2=0;
                            pos3=0;

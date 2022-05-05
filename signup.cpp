@@ -36,7 +36,7 @@ bool signup::on_pushButton_clicked()
     QRegularExpression username_pattern("^[a-zA-Z0-9_-]{5,10}$");//only includes alphabets or digits or underscore or hyphen; 5 to 10 characters
     QRegularExpressionMatch username_is_valid = username_pattern.match(username);
 
-    QRegularExpression password_pattern("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&-+=()])(?=\\S+$).*$");
+    QRegularExpression password_pattern("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&-+=()\\?]).*$");
     QRegularExpressionMatch password_is_valid = password_pattern.match(password);
     if(password_is_valid.hasMatch()&&username_is_valid.hasMatch())
     {

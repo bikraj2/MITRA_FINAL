@@ -90,10 +90,6 @@ void MainWindow::db_conn_open()
     info.setDatabaseName("C:/Db/users.db");
 
     info.open();
-    if (!info.open())
-    {
-        qDebug() << "hey sorry";
-    }
 }
 void MainWindow::db_conn_close()
 {
@@ -107,8 +103,8 @@ bool MainWindow ::setTable()
     QString qry = "Create Table users"
                   "("
                   "full_name varchar(50),"
-                  "nickname varchar(50) PRIMARY KEY,"
-                  "username varchar(50),"
+                  "nickname varchar(50) ,"
+                  "username varchar(50) PRIMARY KEY ,"
                   "password1 varchar(50),"
                   "DOB date,"
                   "Profile_picture varchar(50) DEFAULT '1.png' ,"
@@ -118,44 +114,15 @@ bool MainWindow ::setTable()
     QSqlQuery quotes;
     QString quote_table="Create table quotes (quote varchar(200))";
     quotes.exec(quote_table);
-    if (table1.exec(qry))
-    {
-        qDebug() << "Done";
-    }
-    else
-    {
-        qDebug() << table1.lastError().text();
-    }
+    table1.exec(qry);
     QString not_started_qry = "Create Table not_started (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))", on_going_qry = "Create Table on_going (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))", completed_qry = "Create Table completed (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))";
-    if (not_started.exec(not_started_qry))
-    {
-        qDebug() << "DOne";
-    }
-    else
-    {
-        qDebug() << not_started.lastError().text();
-    }
-    if (on_going.exec(on_going_qry))
-    {
-        qDebug() << "ongoing created";
-    }
-    else
-    {
-        qDebug() << on_going.lastError().text();
-    }
-    if (completed.exec(completed_qry))
-    {
-        qDebug() << "completed created";
-    }
-    else
-    {
-        qDebug() << completed.lastError().text();
-    }
+    not_started.exec(not_started_qry);
+    on_going.exec(on_going_qry);
+    completed.exec(completed_qry);
     return false;
 }
 void MainWindow::encrypt(QString &string_encrypt)
 {
-
     QString p_text = string_encrypt;
     int k = 598658, value, ascii;
     for (int i = 0; i < p_text.size(); i++)

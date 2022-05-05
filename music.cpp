@@ -65,7 +65,7 @@ music::music(QWidget *parent) : QDialog(parent),
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-    connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
+    connect(sc, SIGNAL(triggered()), this, SLOT(on_playButton_clicked()));
     this->addAction(sc);
 
 };
@@ -173,7 +173,6 @@ void music::on_playButton_clicked()
 
 
     player->play();
-    qDebug()<<"Hello";
 }
 
 

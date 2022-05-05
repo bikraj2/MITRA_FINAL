@@ -11,42 +11,33 @@ CONFIG += c++11 resources_big
 SOURCES += \
     change_password.cpp \
     dialog1.cpp \
-    dialog2.cpp \
     forgotpassword.cpp \
     main.cpp \
     mainwindow.cpp \
     music.cpp \
     notes.cpp \
     signup.cpp\
-    taskadder.cpp \
-    todo.cpp\
-    syllabus.cpp
+    todo.cpp
 
 HEADERS += \
     change_password.h \
     dialog1.h \
-    dialog2.h \
     forgotpassword.h \
     mainwindow.h \
     music.h \
     notes.h \
     signup.h\
-    taskadder.h \
-    todo.h\
-    syllabus.h
+    todo.h
 
 FORMS += \
     change_password.ui \
     dialog1.ui \
-    dialog2.ui \
     forgotpassword.ui \
     mainwindow.ui \
     music.ui \
     notes.ui \
     signup.ui\
-    taskadder.ui \
-    todo.ui\
-    syllabus.ui
+    todo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
