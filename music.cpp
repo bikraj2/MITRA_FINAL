@@ -28,56 +28,46 @@ music::music(QWidget *parent) : QDialog(parent),
     ui->setupUi(this);
 
     this->setWindowTitle("Pomodoro");
-   ui->pushButton1->setStyleSheet(css1);
-   ui->pushButton2->setStyleSheet(css1);
+    ui->pushButton1->setStyleSheet(css1);
+    ui->pushButton2->setStyleSheet(css1);
     ui->pushButton3->setStyleSheet(css1);
 
 
 
-    QPixmap pix(":/icon/icon/phooo.png");
-    ui->label1->setPixmap(pix.scaled(400, 400, Qt::KeepAspectRatio));
+
 
     player = new QMediaPlayer(this);
     audio = new QAudioOutput(this);
     timer1 = new QTimer(this);
+    timer1->setTimerType(Qt::PreciseTimer);
+
     timer2 = new QTimer(this);
-
+    timer2->setTimerType(Qt::PreciseTimer);
     connect(timer1, SIGNAL(timeout()), this, SLOT(changeTime()));
-    //connect(timer1,SIGNAL(timeout()),this,SLOT(breaktime()));
     connect(timer2, SIGNAL(timeout()), this, SLOT(breaktime()));
-
     player->setAudioOutput(audio);
 
-    ui->playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
     QFont font = ui->label1->font();
     font.setBold(true);
     font.setPointSize(120);
     ui->label1->setFont(font);
     ui->label1->setText(intToQString(minute) + ":" + intToQString(second));
 
-    connect(ui->playButton, &QAbstractButton::clicked, this, &music::on_startButton_clicked);
-
+    ui->playButton->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
     ui->stopButton->setIcon(style()->standardIcon(QStyle::SP_MediaStop));
-
-    connect(ui->stopButton, &QAbstractButton::clicked, this, &music::on_stopButton_clicked);
-
     ui->nextButton->setIcon(style()->standardIcon(QStyle::SP_MediaSkipForward));
-
-    connect(ui->nextButton, &QAbstractButton::clicked, this, &music::on_nextButton_clicked);
-
     ui->previousButton->setIcon(style()->standardIcon(QStyle::SP_MediaSkipBackward));
 
+    connect(ui->playButton, &QAbstractButton::clicked, this, &music::on_playButton_clicked);
+    connect(ui->stopButton, &QAbstractButton::clicked, this, &music::on_stopButton_clicked);
+    connect(ui->nextButton, &QAbstractButton::clicked, this, &music::on_nextButton_clicked);
     connect(ui->previousButton, &QAbstractButton::clicked, this, &music::on_previousButton_clicked);
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-    // QAction *sc1 = new QAction(this);
-    // sc1->setShortcut(Qt::Key_Enter);
-    // connect(sc, SIGNAL(triggered()), this, SLOT(start()));
     connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
-    // connect(sc1, SIGNAL(triggered()), this, SLOT(on_stopButton_clicked()));
     this->addAction(sc);
-    //this->addAction(sc1);
+
 };
 music::~music()
 {
@@ -110,6 +100,7 @@ void music ::on_nextButton_clicked()
     {
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s5.mp3"));
     }
+
     if (count < 0)
     {
         count = 5;
@@ -118,6 +109,7 @@ void music ::on_nextButton_clicked()
 }
 void music ::on_previousButton_clicked()
 {
+
 
     count = count % 6;
     count--;
@@ -147,7 +139,7 @@ void music ::on_previousButton_clicked()
     }
     player->play();
 }
-void music::on_startButton_clicked()
+void music::on_playButton_clicked()
 {
 
     if (count == 0)
@@ -177,8 +169,13 @@ void music::on_startButton_clicked()
 
     timer1->start(10);
 
+
+
+
     player->play();
+    qDebug()<<"Hello";
 }
+
 
 void music::on_stopButton_clicked()
 {
@@ -206,6 +203,10 @@ void music::changeTime()
     msgBox.setText("Great Work, Champ!");
     msgBox.setText("Do you want a break now? ");
     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    QMessageBox msgBox2;
+    msgBox2.setText("50 minutes up!!");
+    msgBox2.setText("You gotta take a break now!");
+    msgBox2.setStandardButtons(QMessageBox::Ok);
     if (minute == 25 && second == 0)
     {
 
@@ -228,6 +229,25 @@ void music::changeTime()
 
             break;
         }
+    }
+
+    if(minute == 50 && second ==0 )
+    {
+        option = msgBox2.exec();
+
+        if(option == QMessageBox:: Yes) {
+            minute = second = millisecond = 0 ;
+            ui->label1->setText(intToQString(minute) + ":" + intToQString(second));
+            timer1->stop();
+            bsecond = 59 ;
+            bminute = 4;
+            breaktime();
+
+        }
+
+
+
+
     }
     if (millisecond >= 100)
     {

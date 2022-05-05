@@ -84,10 +84,10 @@ void MainWindow::db_conn_open()
     QDir data("C:/Db");
     if (!data.exists())
     {
-        data.mkpath("/Users/bibhushansaakha/Desktop/super/MITRA_FINAL/users.db");
+        data.mkpath("C:/Db");
     }
     QSqlDatabase info = QSqlDatabase::addDatabase("QSQLITE");
-    info.setDatabaseName("/Users/priyanshu/ProjectMitra/MITRA_FINAL/users.db");
+    info.setDatabaseName("C:/Db/users.db");
 
     info.open();
     if (!info.open())
@@ -113,7 +113,7 @@ bool MainWindow ::setTable()
                   "DOB date,"
                   "Profile_picture varchar(50) DEFAULT '1.png' ,"
                   "BIO varchar(50) ,"
-                  "Hobbies varchar()"
+                  "Hobbies varchar(50)"
                   ");";
     QSqlQuery quotes;
     QString quote_table="Create table quotes (quote varchar(200))";

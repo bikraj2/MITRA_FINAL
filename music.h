@@ -51,7 +51,7 @@ public slots:
 
 private slots:
     void breaktime();
-    void on_startButton_clicked();
+    void on_playButton_clicked();
     void on_previousButton_clicked();
 
     void on_stopButton_clicked();
