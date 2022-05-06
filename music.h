@@ -41,13 +41,7 @@ public:
 
 public slots:
 
-
     QString intToQString(int num);
-    void alert();
-
-
-
-
 
 private slots:
     void breaktime();
@@ -66,14 +60,14 @@ private slots:
 
     void  on_nextButton_clicked();
 
-    void on_pushButton1_clicked();
+    void on_pushButton1_clicked(); // play
     void changeTime();
 
-    void on_pushButton2_clicked();
+    void on_pushButton2_clicked(); // stop
 
-    void on_pushButton3_clicked();
+    void on_pushButton3_clicked(); // reset
 
-    void on_pushButton_clicked();
+
 
 private:
 

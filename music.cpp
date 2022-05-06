@@ -65,10 +65,11 @@ music::music(QWidget *parent) : QDialog(parent),
 
     QAction *sc = new QAction(this);
     sc->setShortcut(Qt::Key_Space);
-    connect(sc, SIGNAL(triggered()), this, SLOT(on_startButton_clicked()));
+    connect(sc, SIGNAL(triggered()), this, SLOT(on_playButton_clicked()));
     this->addAction(sc);
 
 };
+int music :: count = 0 ;
 music::~music()
 {
 
@@ -76,104 +77,117 @@ music::~music()
 }
 
 void music ::on_nextButton_clicked()
-{
+{   count++;
 
     count = count % 6;
-    count++;
+
     if (count == 1)
     {
+
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
-    }
-    if (count == 2)
-    {
-        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s2.mp3"));
-    }
-    if (count == 3)
-    {
-        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s3.mp3"));
-    }
-    if (count == 4)
-    {
-        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s4.mp3"));
-    }
-    if (count == 5)
-    {
-        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s5.mp3"));
+
     }
 
-    if (count < 0)
+    else if (count == 2)
     {
-        count = 5;
+
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s2.mp3"));
+
     }
+    else if (count == 3)
+    {
+
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s3.mp3"));
+
+    }
+    else if (count == 4)
+    {
+
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s4.mp3"));
+
+    }
+    else if (count == 5)
+    {
+
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s5.mp3"));
+
+    }
+
+
+
     player->play();
 }
 void music ::on_previousButton_clicked()
 {
-
-
     count = count % 6;
-    count--;
-    if (count == 1)
+    if(count<0)
     {
+         count++;
+    }
+    if (count == 0)
+    {
+        qDebug()<<"1";
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
+        count++;
     }
-    if (count == 2)
+
+    else if (count == 1)
     {
+        qDebug()<<"2";
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s2.mp3"));
+
     }
-    if (count == 3)
+    else if (count == 2)
     {
+        qDebug()<<"3";
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s3.mp3"));
+
     }
-    if (count == 4)
+    else if (count == 3)
     {
+        qDebug()<<"4";
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s4.mp3"));
+
     }
-    if (count == 5)
+    else if (count == 4)
     {
+        qDebug()<<"5";
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s5.mp3"));
+
     }
-    if (count < 0)
-    {
-        count = 5;
-    }
+
+
+    count--;
     player->play();
 }
 void music::on_playButton_clicked()
 {
+    count++;
 
-    if (count == 0)
-    {
-        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s1.mp3"));
-    }
     if (count == 1)
+    {
+
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s2.mp3"));
+    }
+    else if (count == 2)
     {
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s2.mp3"));
     }
-    if (count == 2)
+    else if (count == 3)
     {
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s3.mp3"));
     }
-    if (count == 3)
+    else if (count == 4)
     {
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s4.mp3"));
     }
-    if (count == 4)
+    else if (count == 5)
     {
         player->setSource(QUrl::fromLocalFile("qrc:/studymusic/songs/s5.mp3"));
     }
-    if (count < 0)
-    {
-        count = 5;
-    }
-
+    player->play();
     timer1->start(10);
 
-
-
-
-    player->play();
-    qDebug()<<"Hello";
 }
 
 
@@ -181,6 +195,7 @@ void music::on_stopButton_clicked()
 {
     player->stop();
     timer1->stop();
+
 }
 void music::on_Pomodoro_backButton_clicked()
 {
@@ -191,7 +206,6 @@ void music::on_Pomodoro_backButton_clicked()
     parent->show();
 }
 
-int music::count = 0;
 
 void music::changeTime()
 {
@@ -275,16 +289,8 @@ QString music::intToQString(int num)
     return str;
 }
 
-void music::alert()
-{
-    if (minute == 5 && second == 0)
-    {
-        QMessageBox m1;
-        m1.setText("Break Finished");
-        m1.exec();
-    }
-}
-void music::breaktime()
+
+void music::breaktime()   // initiated when we want a break.
 {
 
     QMessageBox breakfinish;
@@ -320,12 +326,14 @@ void music::breaktime()
         //timer2->start(10);
     }
 }
-void music::on_pushButton1_clicked()
+void music::on_pushButton1_clicked() // play button of timer.
 
 {
     timer1->start(10);
+    on_playButton_clicked();
+
 }
-void music::on_pushButton2_clicked()
+void music::on_pushButton2_clicked()  // reset button of timer
 {
     millisecond = second = minute = 0;
     ui->label1->setText(intToQString(minute) + ":" + intToQString(second));
@@ -333,14 +341,10 @@ void music::on_pushButton2_clicked()
     player->stop();
 }
 
-void music::on_pushButton3_clicked()
+void music::on_pushButton3_clicked()  //stop button of timer
 {
     player->stop();
     timer1->stop();
 }
 
-void music::on_pushButton_clicked()
-{
-
-}
 
