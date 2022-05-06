@@ -45,19 +45,7 @@ todo::~todo()
 {
     delete ui;
 }
-void todo::on_pushButton_clicked()
-{
-    /*taskadder AddNewTask;
-    AddNewTask.setModal(true);
-    AddNewTask.exec();*/
-}
 
-void todo::on_pushButton_21_clicked()
-{
-    syllabus Adder;
-    Adder.setModal(true);
-    Adder.exec();
-}
 
 
 void todo::on_pushButton_26_clicked()

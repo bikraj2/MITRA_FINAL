@@ -24,12 +24,7 @@ public slots:
 
 
 private slots:
-    void on_pushButton_clicked();
-
-    void on_pushButton_21_clicked();
-
-    void on_pushButton_26_clicked();
-
+   void on_pushButton_26_clicked();
    bool on_pushButton_27_clicked();
    void load_not_started();
    void load_in_progress();
