@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1574</width>
-    <height>1238</height>
+    <width>1579</width>
+    <height>1242</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -325,10 +325,29 @@ color: #FFF;</string>
        </property>
       </widget>
      </widget>
+     <widget class="QPushButton" name="logout">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>730</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/icon/icon/logout.png);
+border:none;
+background-color:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
      <zorder>profile</zorder>
      <zorder>display_name</zorder>
      <zorder>frame</zorder>
      <zorder>change</zorder>
+     <zorder>logout</zorder>
     </widget>
    </item>
    <item>
@@ -358,9 +377,9 @@ border:0;border-radius:20</string>
      <widget class="QFrame" name="frame_2">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>155</x>
         <y>330</y>
-        <width>696</width>
+        <width>701</width>
         <height>322</height>
        </rect>
       </property>
@@ -581,7 +600,7 @@ color:#FFF;</string>
        <rect>
         <x>220</x>
         <y>40</y>
-        <width>641</width>
+        <width>961</width>
         <height>161</height>
        </rect>
       </property>

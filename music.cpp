@@ -188,6 +188,10 @@ void music::on_playButton_clicked()
     player->play();
     timer1->start(10);
 
+
+
+
+    player->play();
 }
 
 
